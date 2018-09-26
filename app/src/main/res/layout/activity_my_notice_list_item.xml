@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#f5f7ff"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/item_notice_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_10"
+        android:textColor="#9fa0a0"
+        android:textSize="12sp"
+        tools:text="2018-01-01" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_notice_time"
+        android:background="@color/color_ffffff">
+
+        <ImageView
+            android:id="@+id/item_notice_iv"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_margin="@dimen/dp_10"
+            android:scaleType="centerInside"
+            android:src="@mipmap/sys" />
+
+
+        <TextView
+            android:id="@+id/message_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/item_notice_iv"
+            android:layout_below="@+id/time"
+            android:layout_toRightOf="@+id/item_notice_iv"
+            android:gravity="left"
+            android:text="巡检提醒"
+            android:textColor="#844949"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:id="@+id/message_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/message_title"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_toRightOf="@+id/item_notice_iv"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            android:textColor="#474455"
+            tools:text="系统消息系统消息系统消息系统消息系统消息" />
+    </RelativeLayout>
+
+    <!--<data>-->
+
+    <!--<variable-->
+    <!--name="bean"-->
+    <!--type="com.zhjy.cultural.services.patrol.biz.pojo.bean.RecordBean" />-->
+    <!--</data>-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="#f4f7ff"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:gravity="center_vertical"-->
+    <!--android:orientation="horizontal"-->
+    <!--android:padding="16dp">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/time"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:gravity="center"-->
+    <!--android:text="@{bean.createTime}"-->
+    <!--android:textColor="#9fa0a0"-->
+    <!--android:textSize="12sp"-->
+    <!--tools:text="2018-01-01" />-->
+
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="16dp"-->
+    <!--android:layout_marginRight="16dp"-->
+    <!--android:background="#ffffff"-->
+    <!--android:gravity="center"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<ImageView-->
+    <!--android:layout_width="96dp"-->
+    <!--android:layout_height="96dp"-->
+    <!--android:scaleType="centerInside"-->
+    <!--android:src="@mipmap/xj_no_wc" />-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:layout_marginLeft="16dp"-->
+    <!--android:gravity="center"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/message_title"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="@{String.format(`%s  %s`,`巡检提醒`,bean.daysBetween)}"-->
+    <!--android:textColor="#844949"-->
+    <!--android:textSize="16sp"-->
+    <!--tools:text="巡检提醒" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/message_info"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="8dp"-->
+    <!--android:ellipsize="end"-->
+    <!--android:maxLines="2"-->
+    <!--android:text="@{bean.ww.title}"-->
+    <!--android:textColor="#474455"-->
+    <!--tools:text="系统消息系统消息系统消息系统消息系统消息" />-->
+    <!--</LinearLayout>-->
+
+
+    <!--</LinearLayout>-->
+
+
+    <!--</LinearLayout>-->
+
+
+</RelativeLayout>

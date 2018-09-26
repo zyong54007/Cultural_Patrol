@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_e6dbd7"
+    android:orientation="vertical">
+
+
+    <!--<android.support.constraint.ConstraintLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="#804646"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/view_toolbar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="16dp"-->
+    <!--android:background="#804646"-->
+    <!--android:gravity="bottom"-->
+    <!--android:paddingBottom="16dp"-->
+    <!--android:paddingTop="16dp">-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/imge_back"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:layout_marginLeft="16dp"-->
+    <!--android:src="@mipmap/back_left_ico" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/title"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:text="关于我们"-->
+    <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+    <!--android:textColor="#ffffff"-->
+    <!--android:textSize="18sp" />-->
+    <!--</RelativeLayout>-->
+
+
+    <!--<include layout="@layout/layout_topbar" />-->
+
+    <com.zhjy.cultural.services.patrol.ui.view.Topbar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="@string/about_abouts" />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_30"
+        android:src="@mipmap/update_top_ico_a" />
+
+    <TextView
+        android:id="@+id/text_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@null"
+        android:gravity="center"
+        android:paddingBottom="6dp"
+        android:paddingTop="6dp"
+        android:text="V1.0"
+        android:textColor="#73440f"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+
+    <Button
+        android:id="@+id/btn_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_30"
+        android:background="@drawable/btn_fillet"
+        android:onClick="updateVersion"
+        android:text="版本升级"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="#e6dbd7"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<ImageView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:src="@mipmap/update_top_ico_a" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/text_info"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:layout_marginBottom="16dp"-->
+    <!--android:layout_marginTop="16dp"-->
+    <!--android:background="@null"-->
+    <!--android:gravity="center"-->
+    <!--android:paddingBottom="6dp"-->
+    <!--android:paddingTop="6dp"-->
+    <!--android:text="V1.0"-->
+    <!--android:textColor="#73440f"-->
+    <!--android:textSize="24sp"-->
+    <!--android:textStyle="bold" />-->
+    <!--</LinearLayout>-->
+
+
+    <!--<Button-->
+    <!--android:id="@+id/btn_update"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@drawable/btn_fillet"-->
+    <!--android:onClick="updateVersion"-->
+    <!--android:text="版本升级"-->
+    <!--android:textColor="#ffffff"-->
+    <!--android:textSize="18sp" />-->
+
+
+    <!--</LinearLayout>-->
+
+    <!--</LinearLayout>-->
+
+    <!--</android.support.constraint.ConstraintLayout>-->
+</LinearLayout>
+

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_100"
+    android:layout_marginTop="@dimen/dp_10"
+    android:background="@mipmap/inspection_list_bg_a">
+
+
+    <!--imageUrl="@{imageUrlPath}"-->
+
+    <ImageView
+        android:id="@+id/inspec_iv"
+        android:layout_width="@dimen/dp_120"
+        android:layout_height="@dimen/dp_80"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/dp_10"
+        android:scaleType="fitXY"
+        android:src="@mipmap/default_iv" />
+
+    <TextView
+        android:id="@+id/inspec_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/inspec_iv"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_toRightOf="@+id/inspec_iv"
+        android:textColor="@color/color_844949"
+        android:textSize="@dimen/size_16"
+        tools:text="文物名称" />
+
+    <TextView
+        android:id="@+id/inspec_tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inspec_tv_title"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_toRightOf="@+id/inspec_iv"
+        android:textColor="@color/color_9fa0a0"
+        android:textSize="@dimen/size_14"
+        tools:text="巡检时间 2018-08-08 8:00" />
+
+
+    <TextView
+        android:id="@+id/inspec_tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_5"
+        android:background="@drawable/inspection_list_text_dcl"
+        android:paddingBottom="@dimen/dp_7"
+        android:paddingLeft="@dimen/dp_16"
+        android:paddingRight="@dimen/dp_16"
+        android:paddingTop="@dimen/dp_7"
+        android:text="巡检异常"
+        android:textColor="@color/color_ffffff" />
+
+
+</RelativeLayout>

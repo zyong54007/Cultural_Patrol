@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="bean"
+            type="com.zhjy.cultural.services.patrol.biz.pojo.bean.RecordBean" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/xj_no_wc" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/message_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="巡检提醒"
+                android:textColor="#844949"
+                android:textSize="16sp"
+                tools:text="巡检提醒" />
+
+            <TextView
+                android:id="@+id/message_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{bean.ww.title}"
+                android:textColor="#acadb5"
+                tools:text="系统消息系统消息系统消息系统消息系统消息" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

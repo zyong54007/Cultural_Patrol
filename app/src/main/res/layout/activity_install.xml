@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg_login"
+    tools:context=".InstallActivity">
+
+
+    <EditText
+        android:id="@+id/instali_seria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/dp_50"
+        android:layout_marginRight="@dimen/dp_50"
+        android:paddingLeft="@dimen/dp_10"
+        android:hint="安装序列号"
+        android:maxLength="8"
+        android:textColor="@color/color_844949"
+        android:textSize="@dimen/size_18" />
+
+
+    <Button
+        android:id="@+id/instali_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/instali_seria"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_30"
+        android:background="@drawable/navigation_shape"
+        android:paddingLeft="@dimen/dp_50"
+        android:paddingRight="@dimen/dp_50"
+        android:text="提交"
+        android:textColor="@color/color_ffffff"
+        android:textSize="@dimen/size_18" />
+
+
+    <!--<com.zhjy.cultural.services.patrol.ui.view.PasswordView-->
+    <!--android:id="@+id/instali_code"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--app:cipherEnable="true" />-->
+
+    <!--<EditText-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@null"-->
+    <!--android:hint="" />-->
+
+
+</RelativeLayout>

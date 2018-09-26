@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_10"
+    android:background="@color/color_ffffff">
+
+
+    <ImageView
+        android:id="@+id/item_treasures_iv"
+        android:layout_width="@dimen/dp_130"
+        android:layout_height="@dimen/dp_100"
+        android:layout_margin="@dimen/dp_10"
+        android:scaleType="fitXY"
+        android:src="@mipmap/default_iv" />
+
+
+    <TextView
+        android:id="@+id/item_treasures_tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/item_treasures_iv"
+        android:layout_toRightOf="@+id/item_treasures_iv"
+        android:maxLines="1"
+        android:textColor="#844949"
+        android:textSize="16sp"
+        tools:text="文物名称" />
+
+    <TextView
+        android:id="@+id/item_treasures_tv_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_treasures_tv_title"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_toRightOf="@+id/item_treasures_iv"
+        android:layout_weight="1"
+        android:textColor="#5a5263"
+        tools:text="保护等级:国家级" />
+
+
+    <TextView
+        android:id="@+id/item_treasures_tv_fx_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_treasures_tv_type"
+        android:layout_marginTop="@dimen/dp_15"
+        android:layout_toRightOf="@+id/item_treasures_iv"
+        android:layout_weight="1"
+        android:textColor="#5a5263"
+        tools:text="风险类别:二类" />
+
+
+    <TextView
+        android:id="@+id/item_treasures_tv_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_marginTop="16dp"
+        android:drawablePadding="@dimen/dp_5"
+        android:drawableTop="@mipmap/ww_choice_add_ico_a"
+        android:text="添加巡检"
+        android:textColor="#ffc670" />
+
+
+</RelativeLayout>
+

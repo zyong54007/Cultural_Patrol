@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.zhjy.cultural.services.patrol.ui.view.Topbar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="巡检信息" />
+
+
+    <RadioGroup
+        android:id="@+id/inspec_rg_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_844949"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/inspec_rb_normal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/shape_bg_inspec"
+            android:button="@null"
+            android:drawableLeft="@mipmap/xj_top_xjjl_ico"
+            android:drawablePadding="@dimen/dp_10"
+            android:paddingLeft="@dimen/dp_40"
+            android:text="巡检记录"
+            android:checked="true"
+            android:textColor="@color/color_844949"
+            android:textSize="@dimen/size_16" />
+
+        <RadioButton
+            android:id="@+id/inspec_rb_error"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/shape_bg_inspec"
+            android:button="@null"
+            android:drawableLeft="@mipmap/xj_xjyc_top_ico"
+            android:drawablePadding="@dimen/dp_10"
+            android:paddingLeft="@dimen/dp_40"
+            android:text="异常记录"
+            android:textSize="@dimen/size_16"
+            android:textColor="@color/color_844949" />
+
+
+    </RadioGroup>
+
+
+    <FrameLayout
+        android:id="@+id/inspec_fl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="vertical">-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="#804646"-->
+            <!--android:orientation="vertical">-->
+
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="@dimen/dp_10"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/line_xjjl_tab"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="bottom"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:background="@mipmap/xj_top_w_bg"-->
+                    <!--android:gravity="center"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<ImageView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:src="@mipmap/xj_top_xjjl_ico" />-->
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/xjnum"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:layout_marginLeft="8dp"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="巡检记录"-->
+                        <!--android:textColor="#844949"-->
+                        <!--android:textSize="16sp" />-->
+
+
+                <!--</LinearLayout>-->
+
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/line_xjyc_tab"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="bottom"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:background="@mipmap/xj_top_o_bg_a"-->
+                    <!--android:gravity="center"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<ImageView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:src="@mipmap/xj_xjyc_top_ico" />-->
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/wwerrornum"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:layout_marginLeft="8dp"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="文物异常记录"-->
+                        <!--android:textColor="#844949"-->
+                        <!--android:textSize="16sp" />-->
+
+                <!--</LinearLayout>-->
+
+            <!--</LinearLayout>-->
+
+            <!--<LinearLayout-->
+                <!--android:id="@+id/line_flag"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="#ffffff"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:paddingBottom="16dp"-->
+                <!--android:paddingLeft="16dp"-->
+                <!--android:paddingRight="16dp"-->
+                <!--android:paddingTop="16dp"-->
+                <!--android:visibility="gone">-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tab_qb_status"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:background="@drawable/xj_list_btn_tab_a"-->
+                    <!--android:gravity="center"-->
+                    <!--android:padding="8dp"-->
+                    <!--android:text="全部"-->
+                    <!--android:textColor="#ffffff"-->
+                    <!--android:textSize="16sp" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tab_dcl_status"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:layout_marginLeft="8dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:background="@drawable/xj_list_btn_tab_b"-->
+                    <!--android:gravity="center"-->
+                    <!--android:padding="8dp"-->
+                    <!--android:text="待处理"-->
+                    <!--android:textColor="#844949"-->
+                    <!--android:textSize="16sp" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tab_ygd_status"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:layout_marginLeft="8dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:background="@drawable/xj_list_btn_tab_b"-->
+                    <!--android:gravity="center"-->
+                    <!--android:padding="8dp"-->
+                    <!--android:text="已归档"-->
+                    <!--android:textColor="#844949"-->
+                    <!--android:textSize="16sp" />-->
+            <!--</LinearLayout>-->
+
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<com.zhjy.cultural.services.patrol.ui.view.NonSwipeableViewPager-->
+                <!--android:id="@+id/mViewPager"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:background="#ffffff"-->
+                <!--android:flipInterval="30"-->
+                <!--android:overScrollMode="never"-->
+                <!--android:persistentDrawingCache="animation" />-->
+
+        <!--</LinearLayout>-->
+
+    <!--</LinearLayout>-->
+</LinearLayout>

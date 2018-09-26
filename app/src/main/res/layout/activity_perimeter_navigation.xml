@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="#ed6942"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/view_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#ed6942"
+        >
+        <View
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            />
+
+        <ImageView
+            android:id="@+id/title_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="12dp"
+            android:src="@mipmap/left" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="地图导航"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#ffffff" />
+
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ed6942"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        >
+        <LinearLayout
+            android:id="@+id/top_line_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/rb_org_shape"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="8dp"
+            >
+            <TextView
+                android:id="@+id/top_text_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:textColor="#ed6942"
+                android:textSize="12sp"
+                android:text="交通导航"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/top_line_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/org_bg_normal"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="8dp"
+            >
+            <TextView
+                android:id="@+id/top_text_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:textColor="#ffffff"
+                android:textSize="12sp"
+                android:text="周边服务"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/fl_my_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff">
+
+    </FrameLayout>
+</LinearLayout>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/dp_7"
+        android:paddingTop="@dimen/dp_7">
+
+        <RadioButton
+            android:id="@+id/total"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_weight="1"
+            android:background="@drawable/inspec_tab_bg"
+            android:button="@null"
+            android:gravity="center"
+            android:paddingBottom="@dimen/dp_8"
+            android:paddingTop="@dimen/dp_8"
+            android:text="全部"
+            android:textColor="@drawable/text_color_inspec"
+            android:textSize="@dimen/size_16" />
+
+        <RadioButton
+            android:id="@+id/wait"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_weight="1"
+            android:background="@drawable/inspec_tab_bg"
+            android:button="@null"
+            android:gravity="center"
+            android:paddingBottom="@dimen/dp_7"
+            android:paddingTop="@dimen/dp_7"
+            android:text="待处理"
+            android:textColor="@drawable/text_color_inspec"
+            android:textSize="@dimen/size_16" />
+
+        <RadioButton
+            android:id="@+id/file"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_weight="1"
+            android:background="@drawable/inspec_tab_bg"
+            android:button="@null"
+            android:gravity="center"
+            android:paddingBottom="@dimen/dp_7"
+            android:paddingTop="@dimen/dp_7"
+            android:text="已归档"
+            android:textColor="@drawable/text_color_inspec"
+            android:textSize="@dimen/size_16" />
+
+
+    </RadioGroup>
+
+
+    <!--<android.support.constraint.ConstraintLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="vertical">-->
+
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="巡检记录"-->
+    <!--android:textSize="34sp" />-->
+
+    <!--<android.support.v4.widget.SwipeRefreshLayout-->
+    <!--android:id="@+id/swipeRefreshLayout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+
+    <TextView
+        android:id="@+id/tv_error_nodate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="@dimen/dp_30"
+        android:text="加载中...." />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/record_error_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:divider="#eaeaea"
+        android:dividerHeight="1dp"
+        android:listSelector="@drawable/list_selector"
+        android:overScrollMode="never"
+        tools:listitem="@layout/fragment_main_inspection_list_item" />
+    <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+
+    <!--</LinearLayout>-->
+    <!--</android.support.constraint.ConstraintLayout>-->
+</LinearLayout>

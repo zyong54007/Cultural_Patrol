@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/line_pager"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <View
+            android:layout_width="8dp"
+            android:layout_height="match_parent"
+            android:background="#3285ff"/>
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:text="运通106临线(或运通106线,332路) -> 384路" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#595959"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        android:text="45分钟·9站·步行800米 " />
+
+</LinearLayout>

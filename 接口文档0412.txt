@@ -1,0 +1,215 @@
+1、登录接口-----http://wwgl.hdggwh.com/wwgl/loginInterface?username=outers&pwd=69,70,71,72,73,74,
+
+2、修改密码接口-----/wwgl/userInfo/updatePwd?oldPwd=123456&newPwd=6-16位，必须包含字母、数字
+
+3、获取用户信息接口-----从session取
+
+4、意见反馈接口-----/wwgl/question/save?content=意见&ids=图片ids
+
+5、我的消息列表/消息详情页面
+
+6、我监管的文物列表-----url +  /wwgl/wwInfo/listInterface?pager.offset=0*9
+
+7、文物详情页-----/wwgl/wwInfo/detailInterface?id=1
+
+8、巡检信息列表-----/wwgl/record/listInterface
+参数：
+wwId=文物id  必填
+recordType=r-日常记录 y-异常记录
+startDate=巡检开始日期yyyy-MM-dd
+endDate=巡检结束日期yyyy-MM-dd
+pager.offset=0*10
+
+9、文物巡检信息详情页----/wwgl/record/detailInterface?id=1
+
+10、巡检轨迹点列表-----/wwgl/point/listInterface?recordId=巡检记录id
+
+11、保存巡检轨迹点，返回id-----/wwgl/point/save?point=116.306914,39.939423
+
+12、上传图片接口，返回id-----/wwgl/upload/uploadImage
+
+13、图片列表-----/wwgl/upload/listImage
+	参数：
+	id=关联id
+	type= 1-文物图片,2-巡检图片,3-意见反馈,4-异常处理
+
+
+##########################################
+一 首页
+
+1 我的消息未读条数、
+/wwgl/record/loadTotalMessage
+
+未巡检记录条数
+/wwgl/record/loadTotalNull
+2 巡检提醒列表（返回：提醒标题，提醒内容）
+
+
+1)异常处理提醒列表：
+/wwgl/record/loadMessage?pager.offset=0*10
+提醒标题：【${item.ww.title }】
+<c:if test="${item.flow == 1 }">待反馈</c:if>
+<c:if test="${item.flow == 2 }">待处理</c:if>
+<c:if test="${item.flow == 3 }">待归档</c:if>报告
+2)未巡检记录提醒列表：
+/wwgl/record/loadNullList?pager.offset=0*10
+
+
+3 我的文物列表（返回：文物id，文物名称、保护等级、风险类别、文物地址）（返回：已巡检次数、发现异常次数、已归档次数、未归档次数）
+
+二 修改密码
+
+1 修改密码（参数：用户id，原密码、新密码）（返回：密码修改成功、密码修改失败）
+
+三 打卡
+
+1 提交打卡数据（参数：用户id、文物id、时间、gps坐标数组）
+
+四 登录
+
+1 登录接口（参数：用户名、密码）（返回用户个人信息，id）
+
+五 文物地图
+
+1 文物搜索列表（参数：文物名称）（返回：文物id，文物名称、文物地址、文物gps、联系电话）
+/wwgl/wwInfo/loadMapData?title=文物名称
+
+
+六 版本升级
+
+七 文物列表
+
+1 文物搜索列表（参数：文物名称）（返回：文物id，文物名称、保护等级、风险类别、文物地址）（返回：已巡检次数、发现异常次数、已归档次数、未归档次数）
+/wwgl/wwInfo/listInterface
+分页：pager.offset=0*9
+参数：title=文物名称
+2 文物分类列表（参数：全部、国家级、北京市、海淀区、普查记录）（返回：文物id，文物名称、保护等级、风险类别、文物地址）（返回：已巡检次数、发现异常次数、已归档次数、未归档次数）
+/wwgl/wwInfo/listInterface
+分页：pager.offset=0*9
+参数：wwType=保护等级：0-全部,1-全国重点文物保护单位,2-北京市文物保护单位,3-海淀区文物保护单位,4-文物普查登记项目
+
+
+八 文物详情页
+
+1 文物详情页（参数：文物id）（返回：文物id，文物图片、文物名称、保护等级、风险类别、保存现状、文物地址、文物详情介绍）（返回：已巡检次数、发现异常次数、已归档次数、未归档次数）
+
+2 异常信息列表（参数：文物id）（返回：异常信息id、异常图片、异常时间、处理状态）
+
+3 巡检信息列表（参数：文物id）（返回：巡检信息id、巡检图片、巡检时间、处理状态）
+
+九 我的消息
+
+1 我的消息列表（参数：用户id）（返回：消息id、消息类型（巡检、系统）、消息状态（已读）、消息标题、消息内容、消息时间）
+
+
+十 我的资料
+
+1 我的资料详情（参数：用户id）（返回：用户id、头像、用户名、单位、性别、手机、电话）
+
+十一 选择文物列表
+
+1 选择文物列表（参数：用户id）（返回：文物id、图片、名称、保护等级、风险类别）
+
+2 搜素文物列表（参数：用户id、文物名称）（返回：文物id、图片、名称、保护等级、风险类别）
+
+十二 巡检信息列表
+
+1 巡检记录列表
+/wwgl/record/loadAppList
+分页：pager.offset=0*10
+参数：
+recordType=r-日常记录 y-异常记录
+当recordType=y时，传参数flag=0-全部 1-待处理 2-已归档
+
+	
+十三 文物巡检详情页
+
+1 巡检详情页-巡检正常（参数：巡检记录id）
+	返回：文物图片、文物名称、文物id、文物保护等级、风险类别
+	巡检结果：
+	文物周边安全性；
+	巡检描述：
+	巡检照片：
+	巡检轨迹
+	
+   
+	
+2 添加巡检信息：（参数文物id）
+	返回：文物图片、文物名称、文物id、文物保护等级、风险类别
+	
+	提交保存参数：
+		巡检结果：文物是否完整、文物和文物的组成现象、消防避雷是否齐全
+		文物周边安全性；文物内是否有违法活动、文物单位周边是否有建设行为
+		巡检照片：多张
+		巡检轨迹：数组
+/wwgl/record/save
+参数必填：
+recordId=0或未巡检单id
+removal=true/false; // 是否被迁移或拆除
+destroy=true/false; // 是否有损毁、坍塌、失窃、违法施工现象
+fireComplete=true/false; // 文物消防、避雷设施是否齐备
+insideExplain; // 文物本体说明
+manage=true/false; // 是否有违规的大型拍摄或者不当经营活动
+construction=true/false; // 是否有新的建设行为
+outsideExplain; // 文物周边说明
+wwId=文物id
+status; // 0-未巡检记录 1-正常 2-异常未归档记录3-异常归档记录
+statusDescription; // 结果描述
+flag=2; // 1-定时任务生成的记录2-手工新建的记录;
+image_ids=巡检图片ids
+point_ids=轨迹点ids
+	
+3 添加巡检结果：（巡检信息id）
+	返回：文物图片、文物名称、文物id、文物保护等级、风险类别
+	
+	提交保存参数：
+		巡检结果：文物正常、文物异常
+		相关描述：巡检结构描述信息
+		
+4 巡检异常信息页：（参数：巡检记录id）
+
+/wwgl/record/detailInterface2?id=异常巡检记录id
+
+	返回：文物图片、文物名称、文物id、文物保护等级、风险类别
+	返回：当前异常信息所在流程环节（1 异常记录 2 领导反馈 3 反馈处理 4 归档）
+	返回：异常处理所上传的图片、发现异常的时间
+	返回：领导反馈状态（立即处理、拒绝处理）、领导反馈意见
+	返回：历史反馈后的处理信息列表（描述、巡检照片）
+	返回：归档处理状态（立即归档、拒绝归档）、归档描述、审批人、审批时间
+	
+	提交异常反馈信息（参数：巡检异常记录id）：
+	返回：文物图片、文物名称、文物id、文物保护等级、风险类别
+	提交参数：反馈处理描述、巡检照片
+	
+	
+1)提交领导意见反馈
+/wwgl/opinion/save
+条件：userInfo.type == 1；record.flow == 1 && record.status == 2时
+参数：
+opinionStatus; // 1-立即处理 2-拒绝处理
+opinionDescription=描述
+recordId=巡检记录id
+
+2)提交普通用户异常处理
+/wwgl/handle/save
+条件：userInfo.type == 2；record.flow == 2 && record.status == 2时
+参数：
+handleDescription=描述
+recordId=巡检记录id
+image_ids=处理图片ids
+
+3)提交领导归档意见
+/wwgl/archive/save
+条件：userInfo.type == 1；record.flow == 3 && record.status == 2时
+参数：
+archiveStatus; // 1-同意归档 2-拒绝归档
+archiveDescription=描述
+recordId=巡检记录id
+	
+	
+	
+	
+十四 意见反馈
+
+1 提交意见反馈（参数：用户id、反馈内容、反馈多张照片）
+

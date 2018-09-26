@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zhjy.cultural.services.patrol.ui.treasures.map.TreasuresMapSearchActivity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:background="#ffffff"
+            android:clickable="true"
+            android:visibility="visible"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="48dp"
+            android:background="@drawable/activity_treasures_map_seatch_top_bg_a"
+            android:orientation="vertical"
+            >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                >
+
+                <EditText
+                    android:id="@+id/edit_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="搜索"
+                    android:paddingBottom="16dp"
+                    android:paddingLeft="72dp"
+                    android:paddingRight="72dp"
+                    android:paddingTop="16dp"
+                    android:textColor="#9fa0a0"
+                    android:textColorHint="#9fa0a0"
+                    android:textSize="16sp"
+                    android:textCursorDrawable="@drawable/edit_cursor_color_search"
+                    android:background="@drawable/activity_treasures_map_seatch_top_bg_a"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_gravity="left|center"
+                    android:src="@mipmap/back_left_ico_b"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="72dp"
+                    android:layout_gravity="right|center"
+                    android:src="@mipmap/scan_ico_a"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|bottom"
+                    android:src="@mipmap/ww_search_ico"
+                    />
+
+            </FrameLayout>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:divider="#eaeaea"
+                android:dividerHeight="1dp"
+                android:listSelector="@drawable/list_selector"
+                android:overScrollMode="never"
+                tools:listitem="@layout/map_search_list_item"
+                />
+
+
+        </LinearLayout>
+    </FrameLayout>
+</android.support.constraint.ConstraintLayout>
+</layout>

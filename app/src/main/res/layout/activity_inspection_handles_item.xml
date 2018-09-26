@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="4dp"
+                android:layout_height="match_parent"
+                android:background="#474455" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="相关描述"
+                android:textColor="#474455"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/edit_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/inspection_edittext_bg_a"
+            android:gravity="top"
+            android:hint="请输入巡检描述信息！"
+            android:lineSpacingMultiplier="1.5"
+            android:minLines="5"
+            android:padding="8dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#474455"
+            android:textColorHint="#474455"
+            android:textCursorDrawable="@drawable/edit_cursor_color_gray"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="4dp"
+                android:layout_height="match_parent"
+                android:background="#474455" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="巡检图片"
+                android:textColor="#474455"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/img_recycler_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:overScrollMode="never"
+            app:layoutManager="android.support.v7.widget.StaggeredGridLayoutManager"
+            app:reverseLayout="false"
+            app:spanCount="3"
+            tools:itemCount='10'
+            tools:listitem="@layout/activity_feed_back_list_item" />
+
+    </LinearLayout>
+
+</layout>

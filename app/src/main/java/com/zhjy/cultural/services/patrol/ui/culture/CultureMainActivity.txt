@@ -1,0 +1,303 @@
+package com.zhjy.cultural.services.patrol.ui.culture;
+
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
+
+import com.zhjy.cultural.services.patrol.R;
+import com.zhjy.cultural.services.patrol.app.InjectHelp;
+import com.zhjy.cultural.services.patrol.biz.api.impl.retrofit.IZhihuRetrofitApi;
+import com.zhjy.cultural.services.patrol.biz.pojo.bean.CultureUser;
+import com.zhjy.cultural.services.patrol.biz.pojo.bean.ThemeItem;
+import com.zhjy.cultural.services.patrol.biz.pojo.response.ext.GetAllThemesResponse;
+import com.zhjy.cultural.services.patrol.biz.pojo.response.ext.GetLastThemeResponse;
+import com.zhjy.cultural.services.patrol.databinding.ActivityCultureMainBinding;
+import com.zhjy.cultural.services.patrol.ui.base.AacBaseActivity;
+import com.zhjy.cultural.services.patrol.ui.home.hot.HotNewsAdapter;
+import com.zhjy.cultural.services.patrol.ui.home.hot.HotNewsViewModel;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+
+public class CultureMainActivity extends AacBaseActivity<ActivityCultureMainBinding> {
+
+    @Inject
+    IZhihuRetrofitApi zhihuRetrofitApi;
+
+    private HotNewsAdapter adapter;
+
+    private CultureMainViewModel cultureMainViewModel;
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_culture_main;
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        InjectHelp.appComponent().inject(this);
+        initView();
+        loadData();
+    }
+
+    private void initView(){
+        adapter = new HotNewsAdapter(getSupportFragmentManager());
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.recyclerView.setAdapter(adapter);
+    }
+
+    private void loadData() {
+        showLoading();
+        cultureMainViewModel = ViewModelProviders.of(this, viewModelFactory()).get(CultureMainViewModel.class);
+        cultureMainViewModel.loadAllTheme().observe(this, new Observer<GetAllThemesResponse>() {
+            @Override
+            public void onChanged(@Nullable GetAllThemesResponse getAllThemesResponse) {
+                if (getAllThemesResponse != null) {
+                    //update(getAllThemesResponse.getOthers());
+                    List<ThemeItem> themeItems = getAllThemesResponse.getOthers();
+                    for(ThemeItem item : themeItems){
+                        Log.i("",item.getName());
+                    }
+                    //cultureMainViewModel.insertData();
+                }
+            }
+        });
+
+
+        ViewModelProviders.of(this, viewModelFactory())
+                .get(HotNewsViewModel.class)
+                .getLastThemeResponse()
+                .observe(this, new Observer<GetLastThemeResponse>() {
+                    @Override
+                    public void onChanged(@Nullable GetLastThemeResponse getLastThemeResponse) {
+                        update(getLastThemeResponse);
+                        hideLoading();
+                    }
+                });
+
+        loadDbData();
+    }
+
+    private void loadDbData(){
+        cultureMainViewModel.loadDbData().observe(this, new Observer<List<CultureUser>>() {
+            @Override
+            public void onChanged(@Nullable List<CultureUser> cultureList) {
+                for(CultureUser user : cultureList){
+                    Log.i("db select",user.id + user.username);
+                }
+
+            }
+        });
+
+    }
+    private void update(GetLastThemeResponse response) {
+        adapter.notifyDataSetChanged(response);
+    }
+}
+
+/**
+
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:divider="#eaeaea"
+            android:dividerHeight="1dp"
+            android:listSelector="@drawable/list_selector"
+            android:overScrollMode="never"/>
+
+**/
+
+
+/**
+**/
+ private void initfragment(){
+        mainListFragment = MainListFragment.newInstance();
+        mainMapFragment = MainMapFragment.newInstance();
+        hotNewsFragment = HotNewsFragment.newInstance();
+        mainListFragment2 = MainListFragment.newInstance();
+        setDefaultFragment();
+    }
+
+    private void setDefaultFragment() {
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction transaction = fm.beginTransaction();
+        transaction.replace(R.id.tb, mainListFragment);
+        transaction.commit();
+    }
+
+    private void initView(){
+        binding.bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.tab_icon_home, "首 页"))
+                .addItem(new BottomNavigationItem(R.drawable.tab_icon_venue, "导 行"))
+                .addItem(new BottomNavigationItem(R.drawable.tab_icon_location, "巡 检"))
+                .addItem(new BottomNavigationItem(R.drawable.tab_icon_profile, "我 的"))
+                .setBarBackgroundColor("#d0cdc7")
+                .setActiveColor("#EC6941")
+                .setInActiveColor("#474455")
+                .setMode(BottomNavigationBar.MODE_FIXED)
+                .setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_DEFAULT)
+                .setFirstSelectedPosition(0)
+                .initialise();
+
+    }
+
+    private void initListener(){
+        binding.bottomNavigationBar.setTabSelectedListener(new BottomNavigationBar.OnTabSelectedListener(){
+
+            @Override
+            public void onTabSelected(int position) {
+                Log.d(TAG, "onTabSelected() called with: " + "position = [" + position + "]");
+                FragmentManager fm = getSupportFragmentManager();
+                //开启事务
+                FragmentTransaction transaction = fm.beginTransaction();
+                switch (position) {
+                    case 0:
+                        if (mainListFragment == null) {
+                            mainListFragment = MainListFragment.newInstance();
+                        }
+                        transaction.replace(R.id.tb, mainListFragment);
+                        break;
+                    case 1:
+                        if (mainMapFragment == null) {
+                            mainMapFragment = mainMapFragment.newInstance();
+                        }
+                        transaction.replace(R.id.tb, mainMapFragment);
+                        break;
+                    case 2:
+                        if (hotNewsFragment == null) {
+                            hotNewsFragment = hotNewsFragment.newInstance();
+                        }
+                        transaction.replace(R.id.tb, hotNewsFragment);
+                        break;
+                    case 3:
+                        if (mainListFragment2 == null) {
+                            mainListFragment2 = mainListFragment.newInstance();
+                        }
+                        transaction.replace(R.id.tb, mainListFragment2);
+                        break;
+                    default:
+                        break;
+                }
+                // 事务提交
+                transaction.commit();
+            }
+
+            @Override
+            public void onTabUnselected(int position) {
+
+            }
+
+            @Override
+            public void onTabReselected(int position) {
+
+            }
+        });
+    }
+
+        <LinearLayout
+            android:id="@+id/tb"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#ffffff"
+            />
+
+
+        <BottomNavigationView
+                    android:id="@+id/bottom_navigation_bar"
+                    android:layout_width="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_height="wrap_content"/>
+
+
+
+                      /* private void initfragment(){
+                            mainListFragment = MainListFragment.newInstance();
+                            mainMapFragment = MainMapFragment.newInstance();
+                            hotNewsFragment = HotNewsFragment.newInstance();
+                            mainListFragment2 = MainListFragment.newInstance();
+                            setDefaultFragment();
+                        }*/
+
+                        /*private void setDefaultFragment() {
+                            FragmentManager fm = getSupportFragmentManager();
+                            FragmentTransaction transaction = fm.beginTransaction();
+                            transaction.replace(R.id.tb, mainListFragment);
+                            transaction.commit();
+                        }
+
+                        private void initView(){
+                            binding.bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.tab_icon_home, "首 页"))
+                                    .addItem(new BottomNavigationItem(R.drawable.tab_icon_venue, "导 行"))
+                                    .addItem(new BottomNavigationItem(R.drawable.tab_icon_location, "巡 检"))
+                                    .addItem(new BottomNavigationItem(R.drawable.tab_icon_profile, "我 的"))
+                                    .setBarBackgroundColor("#d0cdc7")
+                                    .setActiveColor("#EC6941")
+                                    .setInActiveColor("#474455")
+                                    .setMode(BottomNavigationBar.MODE_FIXED)
+                                    .setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_DEFAULT)
+                                    .setFirstSelectedPosition(0)
+                                    .initialise();
+
+                        }
+
+                        private void initListener(){
+                            binding.bottomNavigationBar.setTabSelectedListener(new BottomNavigationBar.OnTabSelectedListener(){
+
+                                @Override
+                                public void onTabSelected(int position) {
+                                    Log.d(TAG, "onTabSelected() called with: " + "position = [" + position + "]");
+                                    FragmentManager fm = getSupportFragmentManager();
+                                    //开启事务
+                                    FragmentTransaction transaction = fm.beginTransaction();
+                                    switch (position) {
+                                        case 0:
+                                            if (mainListFragment == null) {
+                                                mainListFragment = MainListFragment.newInstance();
+                                            }
+                                            transaction.replace(R.id.tb, mainListFragment);
+                                            break;
+                                        case 1:
+                                            if (mainMapFragment == null) {
+                                                mainMapFragment = mainMapFragment.newInstance();
+                                            }
+                                            transaction.replace(R.id.tb, mainMapFragment);
+                                            break;
+                                        case 2:
+                                            if (hotNewsFragment == null) {
+                                                hotNewsFragment = hotNewsFragment.newInstance();
+                                            }
+                                            transaction.replace(R.id.tb, hotNewsFragment);
+                                            break;
+                                        case 3:
+                                            if (mainListFragment2 == null) {
+                                                mainListFragment2 = mainListFragment.newInstance();
+                                            }
+                                            transaction.replace(R.id.tb, mainListFragment2);
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                    // 事务提交
+                                    transaction.commit();
+                                }
+
+                                @Override
+                                public void onTabUnselected(int position) {
+
+                                }
+
+                                @Override
+                                public void onTabReselected(int position) {
+
+                                }
+                            });
+                        }*/
+

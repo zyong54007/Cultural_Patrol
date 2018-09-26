@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Topbar">
+        <attr name="title" format="string" />
+        <attr name="left_text" format="string" />
+        <attr name="right_text" format="string" />
+        <attr name="left_vis" format="boolean" />
+        <attr name="bg_color" format="color" />
+        <attr name="right_icon" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="ExpandTextView">
+        <attr name="maxCollapsedLines" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="LazyViewPager">
+        <attr name="init_lazy_item_offset" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="PasswordView">
+        <attr name="passwordLength" format="integer" />
+        <attr name="passwordPadding" format="dimension" />
+        <attr name="borderColor" format="color" />
+        <attr name="borderWidth" format="dimension" />
+        <attr name="cursorFlashTime" format="integer" />
+        <attr name="isCursorEnable" format="boolean" />
+        <attr name="cipherEnable" format="boolean" />
+        <attr name="cursorColor" format="color" />
+        <attr name="mode" format="enum">
+            <enum name="underline" value="0" />
+            <enum name="rect" value="1" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="SearchEditText">
+        <attr name="drawableDel" format="reference" />
+    </declare-styleable>
+</resources>

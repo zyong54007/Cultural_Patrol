@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="#31383d">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff">
+
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true" />
+
+        <LinearLayout
+            android:id="@+id/linepop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_alignParentBottom="true"
+            android:layout_alignWithParentIfMissing="false"
+            android:layout_centerHorizontal="true"
+            android:background="#ffffff"
+            android:orientation="vertical"
+            android:animateLayoutChanges="true">
+
+            <View
+                android:id="@+id/view_list_pop_top"
+                android:layout_width="36dp"
+                android:layout_height="4dp"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:background="@drawable/perimeter_list_top_back"
+                />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="72dp">
+
+                <com.baidu.mapapi.baiduapplication.CustomViewPager
+                    android:id="@+id/vp_bus_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:id="@+id/line_dot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:animateLayoutChanges="true">
+                </LinearLayout>
+
+            </FrameLayout>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="#e4e4e4e4"
+                android:layout_marginTop="3dp"
+                />
+            <LinearLayout
+                android:id="@+id/line_list"
+                android:layout_width="match_parent"
+                android:layout_height="192dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignWithParentIfMissing="false"
+                android:layout_centerHorizontal="true"
+                android:orientation="vertical"
+                android:background="#f6f6f3"
+                android:animateLayoutChanges="true">
+
+                <ListView
+                    android:id="@+id/listView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:divider="#e4e4e4e4"
+                    android:dividerHeight="1dp"
+                    android:background="#ffffff"
+                    android:listSelector="@drawable/list_selector"
+                    android:scrollbars="none">
+                </ListView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="6dp"
+            android:src = "@mipmap/back_gray"/>
+
+    </FrameLayout>
+</LinearLayout>

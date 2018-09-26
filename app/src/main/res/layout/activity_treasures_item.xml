@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+        <variable
+            name="bean"
+            type="com.zhjy.cultural.services.patrol.biz.pojo.bean.RecordBean" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/inspection_list_bg_a"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/image"
+            imageUrl="@{imageUrl}"
+            android:layout_width="@dimen/dp_150"
+            android:layout_height="@dimen/dp_100"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:visibility="gone" />
+
+
+        <!--android:text="@{bean.ww.title}"-->
+
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_toRightOf="@+id/image"
+            android:layout_weight="1"
+            android:text="巡检时间"
+            android:textColor="#474455"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_title"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_toRightOf="@+id/image"
+            android:text="@{bean.writeTime}"
+            android:textColor="#9fa0a0"
+            android:textSize="14sp"
+            tools:text="2018-08-08 8:00" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/shape_type_green"
+            android:paddingBottom="5dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="5dp"
+            android:text="巡检正常"
+            android:textColor="@color/color_ffffff" />
+    </RelativeLayout>
+</layout>

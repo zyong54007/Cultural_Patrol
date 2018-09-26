@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".map.NavigationMapActivity">
+
+    <com.zhjy.cultural.services.patrol.ui.view.Topbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="文物地图" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_15"
+            android:text="起点" />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_toLeftOf="@+id/map_search"
+            android:layout_toRightOf="@+id/tv_start" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_start"
+            android:padding="@dimen/dp_15"
+            android:text="终点" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_start"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_toLeftOf="@+id/map_search"
+            android:layout_toRightOf="@+id/tv_start" />
+
+
+        <Button
+            android:id="@+id/map_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="搜索" />
+
+
+    </RelativeLayout>
+
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.zhjy.cultural.services.patrol.ui.view.RadioButtonimage
+            android:id="@+id/main_home_tab"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:button="@null"
+            android:drawableLeft="@drawable/map_select_bg"
+            android:gravity="center"
+            android:text="驾车"
+            android:textColor="@drawable/text_color_map"
+            android:textSize="@dimen/size_12" />
+
+        <RadioButton
+            android:id="@+id/main_market_tab"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:button="@null"
+            android:gravity="center"
+            android:paddingTop="@dimen/dp_6"
+            android:text="公交"
+            android:textColor="@drawable/text_color_map"
+            android:textSize="@dimen/size_12"
+            android:drawableLeft="@drawable/map_select_bus_bg" />
+
+
+        <RadioButton
+            android:id="@+id/main_dapp_tab"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:button="@null"
+            android:drawableTop="@drawable/tab_icon_venue"
+            android:gravity="center"
+            android:paddingTop="@dimen/dp_6"
+            android:text="@string/xunjian"
+            android:textColor="@drawable/nav_item_color_state"
+            android:textSize="@dimen/size_12" />
+
+
+    </RadioGroup>
+
+
+</LinearLayout>

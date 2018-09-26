@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <!--<variable-->
+        <!--name="imageUrlPath"-->
+        <!--type="String" />-->
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+        <variable
+            name="status"
+            type="String" />
+
+        <variable
+            name="bean"
+            type="com.zhjy.cultural.services.patrol.biz.pojo.bean.RecordBean" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_100"
+        android:background="@mipmap/inspection_list_bg_a"
+        android:orientation="horizontal">
+        <!--imageUrl="@{imageUrlPath}"-->
+
+        <ImageView
+            android:id="@+id/inspecationimage"
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="@dimen/dp_80"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dp_10"
+            android:scaleType="fitXY"
+            app:image="@{imageUrl}" />
+
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/inspecationimage"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_toRightOf="@+id/inspecationimage"
+            android:text="@{bean.ww.title}"
+            android:textColor="@color/color_844949"
+            android:textSize="@dimen/size_16"
+            tools:text="文物名称" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_title"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_toRightOf="@+id/inspecationimage"
+            android:text="@{String.format(`巡检时间:%s`,bean.writeTime)}"
+            android:textColor="@color/color_9fa0a0"
+            android:textSize="@dimen/size_14"
+            tools:text="巡检时间 2018-08-08 8:00" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="top"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_weight="0"
+            android:background="#00000000"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/inspecstatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/inspection_list_text_dcl"
+                android:paddingBottom="@dimen/dp_7"
+                android:paddingLeft="@dimen/dp_16"
+                android:paddingRight="@dimen/dp_16"
+                android:paddingTop="@dimen/dp_7"
+                android:textColor="@color/color_ffffff"
+                tools:text="@{status}" />
+        </LinearLayout>
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="vertical">-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/text_title"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:lines="3"-->
+        <!--android:text="@{bean.ww.title}"-->
+        <!--android:textColor="#844949"-->
+        <!--android:textSize="16sp"-->
+        <!--tools:text="标题标题标题标题标题标题" />-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@{String.format(`巡检时间:%s`,bean.writeTime)}"-->
+        <!--android:textColor="#9fa0a0"-->
+        <!--android:textSize="14sp"-->
+        <!--tools:text="2018-08-08 8:00" />-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="top"-->
+        <!--android:layout_marginRight="16dp"-->
+        <!--android:layout_weight="0"-->
+        <!--android:background="#00000000"-->
+        <!--android:orientation="vertical">-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@drawable/inspection_list_text_dcl"-->
+        <!--android:paddingBottom="5dp"-->
+        <!--android:paddingLeft="16dp"-->
+        <!--android:paddingRight="16dp"-->
+        <!--android:paddingTop="5dp"-->
+        <!--android:text="待处理"-->
+        <!--android:textColor="#474455"-->
+        <!--tools:text="待处理" />-->
+        <!--</LinearLayout>-->
+    </RelativeLayout>
+</layout>

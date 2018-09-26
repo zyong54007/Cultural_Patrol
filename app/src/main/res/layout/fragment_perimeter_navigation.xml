@@ -1,0 +1,126 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="#ed6942">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/view_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#ed6942"
+            >
+            <View
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                />
+
+            <ImageView
+                android:id="@+id/title_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="12dp"
+                android:src="@mipmap/left" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="地图导航"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#ffffff" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_tab"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_below="@+id/view_toolbar"
+            android:background="#ed6942" >
+
+            <com.baidu.mapapi.clusterutil.ui.SyncHorizontalScrollView
+                android:id="@+id/mHsv"
+                android:layout_width="fill_parent"
+                android:layout_height="40dip"
+                android:fadingEdge="none"
+                android:scrollbars="none" >
+
+                <RelativeLayout
+                    android:id="@+id/rl_nav"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:background="#ed6942" >
+
+                    <RadioGroup
+                        android:id="@+id/rg_nav_content"
+                        android:layout_width="fill_parent"
+                        android:layout_height="38dip"
+                        android:layout_alignParentTop="true"
+                        android:background="#ed6942"
+                        android:orientation="horizontal" >
+                    </RadioGroup>
+
+                    <ImageView
+                        android:id="@+id/iv_nav_indicator"
+                        android:layout_width="1dip"
+                        android:layout_height="5dip"
+                        android:layout_alignParentBottom="true"
+                        android:background="#ed6942"
+                        android:contentDescription="nav_desc"
+                        android:scaleType="matrix"
+                        android:visibility="gone"/>
+                </RelativeLayout>
+            </com.baidu.mapapi.clusterutil.ui.SyncHorizontalScrollView>
+
+            <ImageView
+                android:id="@+id/iv_nav_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="nav_desc"
+                android:paddingBottom="1dip"
+                android:src="@mipmap/iv_navagation_scroll_left"
+                android:visibility="gone" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/iv_nav_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="nav_desc"
+                android:paddingBottom="1dip"
+                android:src="@mipmap/iv_navagation_scroll_right"
+                android:visibility="visible" >
+            </ImageView>
+        </RelativeLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/mViewPager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/rl_tab"
+            android:layout_gravity="center"
+            android:background="#ffffff"
+            android:flipInterval="30"
+            android:overScrollMode="never"
+            android:persistentDrawingCache="animation" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+        <variable
+            name="bean"
+            type="com.zhjy.cultural.services.patrol.biz.pojo.bean.RecordBean" />
+
+        <variable
+            name="status"
+            type="String" />
+
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/inspection_list_bg_a"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/image"
+            imageUrl="@{imageUrl}"
+            android:layout_width="@dimen/dp_150"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:src="#eeeeee"
+            android:visibility="gone" />
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="16dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="#00000000"-->
+        <!--android:orientation="vertical">-->
+
+        <!--android:text="@{bean.ww.title}"-->
+
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_toRightOf="@+id/image"
+            android:text="发现异常时间"
+            android:textColor="#474455"
+            android:textSize="16sp"
+            tools:text="发现异常时间" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_title"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_toRightOf="@+id/image"
+            android:text="@{bean.writeTime}"
+            android:textColor="#9fa0a0"
+            android:textSize="14sp"
+            tools:text="2018-08-08 8:00" />
+        <!--</LinearLayout>-->
+
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.2"
+            android:padding="@dimen/dp_10"
+            android:paddingBottom="5dp"
+            android:paddingLeft="16dp"
+            android:text="asas"
+            android:textColor="@color/color_ffffff"
+            tools:text="@{status}" />
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HandleMatterActivity">
+
+    <com.zhjy.cultural.services.patrol.ui.view.Topbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="异常待办" />
+
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/handl_matter_tv_nodate"
+        android:paddingTop="@dimen/dp_30"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/size_16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="暂无处理事项" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/handl_matter_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

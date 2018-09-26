@@ -1,0 +1,34 @@
+1、登录接口-----http://wwgl.hdggwh.com/wwgl/loginInterface?username=outers&pwd=69,70,71,72,73,74,
+
+2、修改密码接口-----/wwgl/userInfo/updatePwd?oldPwd=123456&newPwd=6-16位，必须包含字母、数字
+
+3、获取用户信息接口-----从session取
+
+4、意见反馈接口-----/wwgl/question/save?content=意见&ids=图片ids
+
+5、我的消息列表/消息详情页面
+
+6、我监管的文物列表-----/wwgl/wwInfo/listInterface?pager.offset=0*9
+
+7、文物详情页-----/wwgl/wwInfo/detailInterface?id=1
+
+8、巡检信息列表-----/wwgl/record/listInterface
+参数：
+wwId=文物id
+recordType=r-日常记录 y-异常记录
+startDate=巡检开始日期yyyy-MM-dd
+endDate=巡检结束日期yyyy-MM-dd
+pager.offset=0*10
+
+9、文物巡检信息详情页----/wwgl/record/detailInterface?id=1
+
+10、巡检轨迹点列表-----/wwgl/point/listInterface?recordId=巡检记录id
+
+11、保存巡检轨迹点，返回id-----/wwgl/point/save?point=116.306914,39.939423
+
+12、上传图片接口，返回id-----/wwgl/upload/uploadImage
+
+13、图片列表-----/wwgl/upload/listImage
+	参数：
+	id=关联id
+	type= 1-文物图片,2-巡检图片,3-意见反馈,4-异常处理

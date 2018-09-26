@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#844949</color>
+    <color name="colorPrimaryDark">#844949</color>
+    <color name="colorAccent">#844949</color>
+    <color name="colorOrg">#844949</color>
+    <color name="list_item_pressed">#f6f6f6</color>
+    <color name="white">#ffffff</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="org_bg_selected">#ffffff</color>
+    <color name="org_bg_normal">#844949</color>
+    <color name="gray_bg_normal">#474455</color>
+
+    <color name="itemBackground">#844949</color>
+    <color name="itemTextColor">#ffffff</color>
+    <color name="onItemTextColor">#ffc670</color>
+
+    <color name="gray_back">#eeeeee</color>
+
+    <color name="multiple_image_select_primaryDark">#7e4344</color>
+    <color name="multiple_image_select_primaryText">#7e4344</color>
+
+    <color name="color_844949">#844949</color>
+    <color name="color_ffffff">#ffffff</color>
+    <color name="color_474455">#474455</color>
+    <color name="color_eeeeee">#eeeeee</color>
+    <color name="color_F0F0F0">#F0F0F0</color>
+    <color name="color_ff2222">#ff2222</color>
+    <color name="color_e6dbd7">#e6dbd7</color>
+    <color name="color_7b4242">#7b4242</color>
+    <color name="color_9fa0a0">#9fa0a0</color>
+    <color name="color_000000">#000000</color>
+    <color name="color_545160">#545160</color>
+    <color name="color_5a5263">#5a5263</color>
+    <color name="color_f4f7ff">#f4f7ff</color>
+    <!--<color name="color_9fa0a0">#9fa0a0</color>-->
+</resources>

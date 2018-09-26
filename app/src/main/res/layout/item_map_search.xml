@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_ffffff"
+    android:padding="@dimen/dp_15">
+
+    <ImageView
+        android:id="@+id/item_map_search_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:src="@mipmap/map_search_wz_ico" />
+
+
+    <TextView
+        android:id="@+id/map_search_tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_toRightOf="@+id/item_map_search_iv"
+        android:textColor="#844949"
+        android:textSize="16sp"
+        tools:text="北部文化中心" />
+
+
+    <TextView
+        android:id="@+id/map_search_tv_leave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/map_search_tv_title"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/item_map_search_iv"
+        android:textColor="#474455"
+        tools:text="电话 : 010-62451119" />
+
+    <TextView
+        android:id="@+id/map_search_tv_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/map_search_tv_leave"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@+id/item_map_search_iv"
+        android:textColor="#474455"
+        tools:text="北部文化中心内" />
+
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="16dp"-->
+    <!--android:layout_marginRight="16dp"-->
+    <!--android:gravity="center_vertical"-->
+    <!--android:orientation="horizontal">-->
+    <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:src="@mipmap/map_search_wz_ico"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_gravity="top"&ndash;&gt;-->
+    <!--&lt;!&ndash;/>&ndash;&gt;-->
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="16dp"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="@{mTreasuresBean.title}"-->
+    <!--android:textColor="#844949"-->
+    <!--android:textSize="16sp"-->
+    <!--tools:text="北部文化中心" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/name"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="8dp"-->
+    <!--android:text="@{mTreasuresBean.address}"-->
+    <!--android:textColor="#474455"-->
+    <!--tools:text="北部文化中心内" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/tel"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="5dp"-->
+    <!--android:text="@{String.format(`保护等级: %s`,mTreasuresBean.wwTypeStr)}"-->
+    <!--android:textColor="#474455"-->
+    <!--tools:text="电话 : 010-62451119" />-->
+
+    <!--</LinearLayout>-->
+
+    <!--</LinearLayout>-->
+</RelativeLayout>

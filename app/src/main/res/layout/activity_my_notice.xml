@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f7ff"
+    android:orientation="vertical">
+
+
+    <com.zhjy.cultural.services.patrol.ui.view.Topbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="我的消息" />
+
+
+    <!--<android.support.v4.widget.SwipeRefreshLayout-->
+    <!--android:id="@+id/swipeRefreshLayout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:backgroundTint="#f5f7ff"
+        android:divider="#eaeaea"
+        android:dividerHeight="1dp"
+        android:listSelector="@drawable/list_selector"
+        android:overScrollMode="never"
+        tools:listitem="@layout/activity_my_notice_list_item" />
+    <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+
+
+    <!--<android.support.constraint.ConstraintLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="#804646"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/view_toolbar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="16dp"-->
+    <!--android:background="#804646"-->
+    <!--android:gravity="bottom"-->
+    <!--android:paddingBottom="16dp"-->
+    <!--android:paddingTop="16dp">-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/imge_back"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:layout_marginLeft="16dp"-->
+    <!--android:src="@mipmap/back_left_ico" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/title"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:text="我的消息"-->
+    <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+    <!--android:textColor="#ffffff"-->
+    <!--android:textSize="18sp" />-->
+    <!--</RelativeLayout>-->
+
+    <!--<android.support.v4.widget.SwipeRefreshLayout-->
+    <!--android:id="@+id/swipeRefreshLayout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+    <!--<android.support.v7.widget.RecyclerView-->
+    <!--android:id="@+id/recycler_list"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="#ffffff"-->
+    <!--android:divider="#eaeaea"-->
+    <!--android:dividerHeight="1dp"-->
+    <!--android:listSelector="@drawable/list_selector"-->
+    <!--android:overScrollMode="never"-->
+    <!--tools:listitem="@layout/activity_my_notice_list_item" />-->
+    <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+
+    <!--</LinearLayout>-->
+
+    <!--</android.support.constraint.ConstraintLayout>-->
+
+</LinearLayout>
+

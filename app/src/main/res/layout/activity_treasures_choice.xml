@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_844949"
+    android:orientation="vertical"
+    tools:context="com.zhjy.cultural.services.patrol.ui.treasures.choice.TreasuresChoiceActivity">
+
+
+    <com.zhjy.cultural.services.patrol.ui.view.Topbar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="文物列表" />
+
+
+    <LinearLayout
+        android:id="@+id/treasureschoic_search_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ww_list_seatch_bg_a"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+
+        <com.zhjy.cultural.services.patrol.ui.view.SearchEditText
+            android:id="@+id/treasureschoic_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:background="@drawable/ww_list_seatch_bg_a"
+            android:gravity="left"
+            android:hint="搜索"
+            android:imeOptions="actionSearch"
+            android:paddingBottom="10dp"
+            android:paddingLeft="16dp"
+            android:paddingTop="10dp"
+            android:singleLine="true"
+            android:textColorHint="#9fa0a0"
+            android:textCursorDrawable="@drawable/edit_cursor_color_search"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/search_iv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|bottom"
+            android:layout_weight="1"
+            android:src="@mipmap/ww_search_ico" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/nodate"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_f4f7ff"
+        android:gravity="center"
+        android:paddingTop="@dimen/dp_30"
+        android:text="当前条件下暂无搜索结果换个词试试"
+        android:visibility="gone" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f4f7ff"
+        android:divider="#eaeaea"
+        android:dividerHeight="1dp"
+        android:overScrollMode="never"
+        tools:listitem="@layout/activity_treasures_list_list_item" />
+
+    <!--app:drawableDel="@drawable/edit_delete"-->
+
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="#804646"-->
+    <!--android:orientation="vertical">-->
+
+    <!--&lt;!&ndash;<RelativeLayout&ndash;&gt;-->
+    <!--&lt;!&ndash;android:id="@+id/view_toolbar"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginTop="16dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:background="#804646"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:gravity="bottom"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:paddingBottom="16dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:paddingTop="16dp">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+    <!--&lt;!&ndash;android:id="@+id/imge_back"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="@dimen/dp_30"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="@dimen/dp_30"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_alignParentLeft="true"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_centerHorizontal="true"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_centerVertical="true"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginLeft="16dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:src="@mipmap/back_left_ico" />&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+    <!--&lt;!&ndash;android:id="@+id/title"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_centerHorizontal="true"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_centerVertical="true"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:text="文物列表"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:textAppearance="?android:attr/textAppearanceMedium"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:textColor="@color/color_ffffff"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:textSize="@dimen/size_18" />&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+    <!--&lt;!&ndash;android:id="@+id/img_search"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="@dimen/dp_30"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="@dimen/dp_30"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_alignParentRight="true"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_centerHorizontal="true"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_centerVertical="true"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginRight="16dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:src="@mipmap/search_find_ico" />&ndash;&gt;-->
+
+    <!--&lt;!&ndash;</RelativeLayout>&ndash;&gt;-->
+
+    <!--<FrameLayout-->
+    <!--android:id="@+id/frame_search"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginBottom="16dp"-->
+    <!--android:layout_marginLeft="16dp"-->
+    <!--android:layout_marginRight="16dp"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:focusable="true"-->
+    <!--android:focusableInTouchMode="true">-->
+
+    <!--<EditText-->
+    <!--android:id="@+id/edit_search"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="@drawable/ww_list_seatch_bg_a"-->
+    <!--android:hint="搜索"-->
+    <!--android:paddingBottom="10dp"-->
+    <!--android:paddingLeft="16dp"-->
+    <!--android:paddingTop="10dp"-->
+    <!--android:singleLine="true"-->
+    <!--android:textColor="#9fa0a0"-->
+    <!--android:textColorHint="#9fa0a0"-->
+    <!--android:textCursorDrawable="@drawable/edit_cursor_color_search"-->
+    <!--android:textSize="16sp" />-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/img_start_search"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="right|bottom"-->
+    <!--android:src="@mipmap/ww_search_ico" />-->
+
+    <!--</FrameLayout>-->
+
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+    <!--<android.support.v4.widget.SwipeRefreshLayout-->
+    <!--android:id="@+id/swipeRefreshLayout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+    <!--<android.support.v7.widget.RecyclerView-->
+    <!--android:id="@+id/recycler_list"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="#f4f7ff"-->
+    <!--android:divider="#eaeaea"-->
+    <!--android:dividerHeight="1dp"-->
+    <!--android:overScrollMode="never"-->
+    <!--tools:listitem="@layout/activity_treasures_list_list_item" />-->
+    <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+    <!--</LinearLayout>-->
+
+    <!--</LinearLayout>-->
+
+</LinearLayout>

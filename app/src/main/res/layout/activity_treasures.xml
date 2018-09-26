@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="imageUrlPath"
+            type="String" />
+
+        <variable
+            name="treasuresBean"
+            type="com.zhjy.cultural.services.patrol.biz.pojo.response.ext.GetTreasuresInfoResponse" />
+
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#7a4141"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_15"
+            android:background="#7a4141">
+
+            <ImageView
+                android:id="@+id/img_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="16dp"
+                android:src="@mipmap/back_left_ico" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
+                android:text="文物详情"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/btn_add_ia">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:descendantFocusability="blocksDescendants"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_200"
+                        android:background="@mipmap/treasures_top_bg_a"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/image"
+                                imageUrl="@{imageUrlPath}"
+                                android:layout_width="@dimen/dp_150"
+                                android:layout_height="@dimen/dp_100"
+                                android:layout_gravity="center"
+                                android:layout_weight="0"
+                                android:scaleType="fitXY"
+                                android:src="#eeeeee" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/text_title"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@{treasuresBean.title}"
+                                    android:textColor="#844949"
+                                    android:textSize="16sp"
+                                    tools:text="标题标题标题标题标题标题标题标题" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@{String.format(`保护等级:%s`,treasuresBean.wwTypeStr)}"
+                                        android:textColor="#5a5263"
+                                        tools:text="保护等级:国家级" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@{String.format(`风险类别:%s`,treasuresBean.fxTypeStr)}"
+                                        android:textColor="#5a5263"
+                                        tools:text="风险类别:二类" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@mipmap/ww_address" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="8dp"
+                                        android:text="@{treasuresBean.address}"
+                                        android:textColor="#5a5263"
+                                        tools:text="北京市海淀区" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/xj_xx_num_ico" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:text="@{String.format(`巡检%d次`,treasuresBean.totalRecord)}"
+                                android:textColor="#22819f"
+                                tools:text="巡检10次" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:text="@{String.format(`异常信息:%d`,treasuresBean.totalStatus2+treasuresBean.totalStatus3)}"
+                                android:textColor="#bf3636"
+                                tools:text="异常信息:0" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:text="@{String.format(`已归档(%d)`,treasuresBean.totalStatus3)}"
+                                android:textColor="#bf3636"
+                                tools:text="已归档(5)" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:text="@{String.format(`未归档(%d)`,treasuresBean.totalStatus2)}"
+                                android:textColor="#bf3636"
+                                tools:text="未归档(5)" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/details_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@color/color_ffffff"
+                            android:drawableLeft="@mipmap/ww_xq_location_ico"
+                            android:drawablePadding="@dimen/dp_15"
+                            android:onClick="detailsmap"
+                            android:padding="@dimen/dp_10"
+                            android:paddingLeft="@dimen/dp_20"
+                            android:text="@{treasuresBean.address}"
+                            android:textColor="#474455"
+                            tools:text="北京市海淀区新建宫门路19号" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_25"
+                            android:layout_height="@dimen/dp_25"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/dp_10"
+                            android:src="@mipmap/set_right_ico" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:background="#f4f7ff" />
+
+                    <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:background="#ffffff"-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:padding="16dp">-->
+
+                    <!--<ImageView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:src="@mipmap/ww_xq_ico_b" />-->
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="8dp"
+                        android:drawableLeft="@mipmap/ww_xq_ico_b"
+                        android:drawablePadding="@dimen/dp_10"
+                        android:paddingBottom="@dimen/dp_10"
+                        android:paddingTop="@dimen/dp_10"
+                        android:text="文物详情"
+                        android:textColor="@color/color_844949"
+                        android:textSize="@dimen/size_16" />
+
+                    <!--</LinearLayout>-->
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="#dde2e3" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:orientation="horizontal"
+                        android:padding="8dp">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:lineSpacingMultiplier="1.5"
+                            android:padding="8dp"
+                            android:text="@{null == treasuresBean.content ? `` : android.text.Html.fromHtml(treasuresBean.content)}"
+                            android:textColor="#474455"
+                            tools:text="    颐和园，属国家级文保单位，原名清漪园，由著名宫廷建筑师雷家玺设计，建于1750～1764年。占地约290公顷，主要由万寿山和昆明湖组成.1860年被英法联军烧毁，1888年慈禧太后挪用军费500余万两白银重修，改名为颐和园。园内殿堂楼阁、游廊水榭等建筑，精巧华丽，布局严整，是世界上造景丰富、建筑集中、保存最完整……" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:background="#f4f7ff" />
+
+                    <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:padding="16dp">-->
+
+                    <!--<ImageView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:src="@mipmap/ww_xj_light_c" />-->
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="8dp"
+                        android:drawableLeft="@mipmap/ww_xj_light_c"
+                        android:drawablePadding="@dimen/dp_10"
+                        android:paddingBottom="@dimen/dp_10"
+                        android:paddingTop="@dimen/dp_10"
+                        android:text="异常信息"
+                        android:textColor="#844949"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/notdateerror"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dp_15"
+                        android:layout_marginTop="@dimen/dp_15"
+                        android:gravity="center"
+                        android:text="暂无数据"
+                        android:textSize="@dimen/size_16"
+                        android:visibility="gone" />
+
+
+                    <!--</LinearLayout>-->
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="#dde2e3" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/yc_recycler_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:divider="#eaeaea"
+                        android:dividerHeight="1dp"
+                        android:listSelector="@drawable/list_selector"
+                        android:overScrollMode="never"
+                        tools:itemCount='3'
+                        tools:listitem="@layout/activity_treasures_item_error" />
+
+                    <LinearLayout
+                        android:id="@+id/line_bottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="10dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/text"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:lines="1"
+                            android:text="... 点击加载更多 ..."
+                            android:textColor="#9fa0a0" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:background="#f4f7ff" />
+
+                    <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:padding="16dp">-->
+
+                    <!--<ImageView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:src="@mipmap/ww_xq_fy_ico_d" />-->
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="8dp"
+                        android:drawableLeft="@mipmap/ww_xq_fy_ico_d"
+                        android:drawablePadding="@dimen/dp_10"
+                        android:paddingBottom="@dimen/dp_10"
+                        android:paddingTop="@dimen/dp_10"
+                        android:text="正常巡检信息"
+                        android:textColor="#844949"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/notdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dp_15"
+                        android:layout_marginTop="@dimen/dp_15"
+                        android:gravity="center"
+                        android:text="暂无数据"
+                        android:textSize="@dimen/size_16"
+                        android:visibility="gone" />
+
+                    <!--</LinearLayout>-->
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="#dde2e3" />
+
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/xj_recycler_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:divider="#eaeaea"
+                        android:dividerHeight="1dp"
+                        android:listSelector="@drawable/list_selector"
+                        android:overScrollMode="never"
+                        tools:itemCount='3'
+                        tools:listitem="@layout/activity_treasures_item" />
+
+                    <LinearLayout
+                        android:id="@+id/line_bottom_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="16dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:lines="1"
+                            android:text="... 点击加载更多 ..."
+                            android:textColor="#9fa0a0" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v4.widget.NestedScrollView>
+
+            <Button
+                android:id="@+id/btn_add_ia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="@dimen/dp_5"
+                android:background="#cc66aba9"
+                android:orientation="horizontal"
+                android:text="+添加巡检记录"
+                android:textColor="#ffffff" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</layout>

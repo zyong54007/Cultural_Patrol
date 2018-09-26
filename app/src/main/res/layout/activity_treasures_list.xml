@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.zhjy.cultural.services.patrol.ui.view.Topbar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="文物列表" />
+
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_844949"
+        android:orientation="horizontal"
+        >
+
+        <RadioButton
+            android:id="@+id/treasures_rb_count"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/treasures_tb_bg"
+            android:button="@null"
+            android:gravity="center"
+            android:text="全部"
+            android:textColor="@color/color_844949"
+            android:textSize="@dimen/size_16" />
+
+        <RadioButton
+            android:id="@+id/treasures_rb_country"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/treasures_tb_bg"
+            android:button="@null"
+            android:gravity="center"
+            android:text="国家级"
+            android:textColor="@color/color_844949" />
+
+        <RadioButton
+            android:id="@+id/treasures_rb_city"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/treasures_tb_bg"
+            android:button="@null"
+            android:gravity="center"
+            android:text="北京市"
+            android:textColor="@color/color_844949" />
+
+        <RadioButton
+            android:id="@+id/treasures_rb_county"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/treasures_tb_bg"
+            android:button="@null"
+            android:gravity="center"
+            android:text="海淀区"
+            android:textColor="@color/color_844949" />
+
+        <RadioButton
+            android:id="@+id/treasures_rb_record"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/treasures_tb_bg"
+            android:button="@null"
+            android:gravity="center"
+            android:text="普查记录"
+            android:textColor="@color/color_844949" />
+
+
+    </RadioGroup>
+
+
+    <TextView
+        android:id="@+id/nodate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="@dimen/dp_30"
+        android:text="暂无数据"
+        android:visibility="gone" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:divider="#eaeaea"
+        android:dividerHeight="1dp"
+        android:listSelector="@drawable/list_selector"
+        android:overScrollMode="never"
+        tools:listitem="@layout/main_item_list_item_ww" />
+
+
+</LinearLayout>
+
+
+    <!--<LinearLayout--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:background="#804646"--><!--android:orientation="vertical">-->
+
+
+    <!--<LinearLayout--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:layout_marginTop="16dp"--><!--android:orientation="horizontal">-->
+
+    <!--<LinearLayout--><!--android:id="@+id/line_wwqb_tab"--><!--android:layout_width="0dp"--><!--android:layout_height="wrap_content"--><!--android:layout_gravity="bottom"--><!--android:layout_weight="1"--><!--android:background="@mipmap/ww_list_ico_b"--><!--android:gravity="center"--><!--android:orientation="horizontal">-->
+
+    <!--<TextView--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:layout_gravity="center"--><!--android:layout_marginLeft="8dp"--><!--android:gravity="center"--><!--android:text="全部"--><!--android:textColor="#844949"--><!--android:textSize="16sp" />-->
+
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout--><!--android:id="@+id/line_wwgj_tab"--><!--android:layout_width="0dp"--><!--android:layout_height="wrap_content"--><!--android:layout_gravity="bottom"--><!--android:layout_weight="1"--><!--android:background="@mipmap/ww_list_ico_a"--><!--android:gravity="center"--><!--android:orientation="horizontal">-->
+
+    <!--<TextView--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:layout_gravity="center"--><!--android:layout_marginLeft="8dp"--><!--android:gravity="center"--><!--android:text="国家级"--><!--android:textColor="#844949"--><!--android:textSize="16sp" />-->
+
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout--><!--android:id="@+id/line_wwbj_tab"--><!--android:layout_width="0dp"--><!--android:layout_height="wrap_content"--><!--android:layout_gravity="bottom"--><!--android:layout_weight="1"--><!--android:background="@mipmap/ww_list_ico_a"--><!--android:gravity="center"--><!--android:orientation="horizontal">-->
+
+    <!--<TextView--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:layout_gravity="center"--><!--android:layout_marginLeft="8dp"--><!--android:gravity="center"--><!--android:text="北京市"--><!--android:textColor="#844949"--><!--android:textSize="16sp" />-->
+
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout--><!--android:id="@+id/line_wwhd_tab"--><!--android:layout_width="0dp"--><!--android:layout_height="wrap_content"--><!--android:layout_gravity="bottom"--><!--android:layout_weight="1"--><!--android:background="@mipmap/ww_list_ico_a"--><!--android:gravity="center"--><!--android:orientation="horizontal">-->
+
+    <!--<TextView--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:layout_gravity="center"--><!--android:layout_marginLeft="8dp"--><!--android:gravity="center"--><!--android:text="海淀区"--><!--android:textColor="#844949"--><!--android:textSize="16sp" />-->
+
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout--><!--android:id="@+id/line_wwpc_tab"--><!--android:layout_width="0dp"--><!--android:layout_height="wrap_content"--><!--android:layout_gravity="bottom"--><!--android:layout_weight="1"--><!--android:background="@mipmap/ww_list_ico_a"--><!--android:gravity="center"--><!--android:orientation="horizontal">-->
+
+    <!--<TextView--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:layout_gravity="center"--><!--android:layout_marginLeft="8dp"--><!--android:gravity="center"--><!--android:text="普查记录"--><!--android:textColor="#844949"--><!--android:textSize="16sp" />-->
+
+    <!--</LinearLayout>-->
+
+
+    <!--</LinearLayout>-->
+
+    <!--</LinearLayout>-->
+
+
+    <!--<com.zhjy.cultural.services.patrol.ui.view.NonSwipeableViewPager--><!--android:id="@+id/mViewPager"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--android:layout_alignParentBottom="true"--><!--android:layout_below="@+id/rl_tab"--><!--android:layout_gravity="center"--><!--android:background="#ffffff"--><!--android:flipInterval="30"--><!--android:overScrollMode="never"--><!--android:persistentDrawingCache="animation" />-->
+
+    <!--</LinearLayout>-->
+
+    <!--</android.support.constraint.ConstraintLayout></LinearLayout>-->

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/activity_treasures_map_seatch_top_bg_a"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+
+            <com.zhjy.cultural.services.patrol.ui.view.SearchEditText
+                android:id="@+id/edit_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/activity_treasures_map_seatch_top_bg_a"
+                android:gravity="left"
+                android:hint="搜索"
+                android:imeOptions="actionSearch"
+                android:paddingBottom="@dimen/dp_10"
+                android:paddingLeft="@dimen/dp_72"
+                android:paddingRight="@dimen/dp_72"
+                android:paddingTop="@dimen/dp_10"
+                android:singleLine="true"
+                android:textColorHint="@color/color_9fa0a0"
+                android:textCursorDrawable="@drawable/edit_cursor_color_search"
+                android:textSize="@dimen/size_16" />
+
+
+            <!--<EditText-->
+            <!--android:id="@+id/edit_search"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@drawable/activity_treasures_map_seatch_top_bg_a"-->
+            <!--android:hint="搜索"-->
+            <!--android:paddingBottom="16dp"-->
+            <!--android:paddingLeft="72dp"-->
+            <!--android:paddingRight="72dp"-->
+            <!--android:paddingTop="16dp"-->
+            <!--android:textColor="#9fa0a0"-->
+            <!--android:textColorHint="#9fa0a0"-->
+            <!--android:textCursorDrawable="@drawable/edit_cursor_color_search"-->
+            <!--android:textSize="16sp" />-->
+
+            <ImageView
+                android:id="@+id/img_back"
+                android:layout_width="@dimen/dp_25"
+                android:layout_height="@dimen/dp_25"
+                android:layout_gravity="left|center"
+                android:layout_marginLeft="16dp"
+                android:src="@mipmap/back_left_ico_b" />
+
+            <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="right|center"-->
+            <!--android:layout_marginRight="72dp"-->
+            <!--android:src="@mipmap/scan_ico_a" />-->
+
+            <ImageView
+                android:id="@+id/img_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:src="@mipmap/ww_search_ico" />
+
+        </FrameLayout>
+
+
+        <TextView
+            android:textSize="@dimen/size_16"
+            android:paddingTop="@dimen/dp_30"
+            android:id="@+id/load"
+            android:background="@color/color_ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:text="加载中...." />
+
+
+        <TextView
+            android:id="@+id/pop_search_"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_ffffff"
+            android:gravity="center"
+            android:text="没有符合搜索条件的结果 换个词试试"
+            android:visibility="gone" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:divider="#eaeaea"
+            android:dividerHeight="1dp"
+            android:listSelector="@drawable/list_selector"
+            android:overScrollMode="never"
+            tools:listitem="@layout/map_search_list_item" />
+    </LinearLayout>
+</layout>

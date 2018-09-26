@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+        <!--<variable-->
+        <!--name="imageUrlPath"-->
+        <!--type="String" />-->
+
+        <variable
+            name="treasuresBean"
+            type="com.zhjy.cultural.services.patrol.biz.pojo.response.ext.GetTreasuresInfoResponse" />
+
+        <variable
+            name="recordBean"
+            type="com.zhjy.cultural.services.patrol.biz.pojo.response.ext.GetRecordInfoResponse" />
+
+        <variable
+            name="opinionBean"
+            type="com.zhjy.cultural.services.patrol.biz.pojo.bean.OpinionBean" />
+
+        <variable
+            name="view"
+            type="android.view.View" />
+
+        <variable
+            name="createTime"
+            type="String" />
+
+        <variable
+            name="stepFlag"
+            type="int" />
+
+        <variable
+            name="stepStatus"
+            type="int" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.zhjy.cultural.services.patrol.ui.inspection.abnormality.InspectionAbnormalityActivity">
+
+
+        <LinearLayout
+            android:id="@+id/line_root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#804646"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/view_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="#804646"
+                android:gravity="bottom"
+                android:paddingBottom="16dp"
+                android:paddingTop="16dp">
+
+                <ImageView
+                    android:id="@+id/imge_back"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:src="@mipmap/back_left_ico" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="文物巡检信息"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="@dimen/size_18" />
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff">
+
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fadingEdge="none"
+                    android:fillViewport="true"
+                    android:overScrollMode="never"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:orientation="vertical"
+                        android:paddingBottom="48dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_130"
+                            android:background="@mipmap/treasures_top_bg_a"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/image"
+                                    android:layout_width="@dimen/dp_130"
+                                    android:layout_height="@dimen/dp_100"
+                                    android:scaleType="fitXY"
+                                    android:src="@mipmap/default_iv"
+                                    app:image="@{imageUrl}" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/text_title"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:maxLines="2"
+                                        android:text="@{treasuresBean.title}"
+                                        android:textColor="#844949"
+                                        android:textSize="16sp"
+                                        tools:text="四羊方尊" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="16dp"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="@{String.format(`保护等级:%s`,treasuresBean.wwTypeStr)}"
+                                            android:textColor="#5a5263"
+                                            tools:text="保护等级:国家级" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="@{String.format(`风险类别:%s`,treasuresBean.fxTypeStr)}"
+                                            android:textColor="#5a5263"
+                                            tools:text="风险类别:二类" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/step_recycler_list"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:background="#ffffff"
+                            android:overScrollMode="never"
+                            android:paddingBottom="16dp"
+                            android:paddingTop="16dp"
+                            app:layoutManager="android.support.v7.widget.StaggeredGridLayoutManager"
+                            app:reverseLayout="false"
+                            app:spanCount="4"
+                            tools:itemCount='4'
+                            tools:listitem="@layout/activity_inspection_abnormality_step_item" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:background="#dde2e3" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/ww_xj_light_c" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:text="异常记录"
+                                android:textColor="#844949"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:background="#dde2e3" />
+
+                        <LinearLayout
+                            android:id="@+id/line_step_to_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/dp_10">
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_130"
+                                android:layout_height="@dimen/dp_100"
+                                android:layout_gravity="center"
+                                android:scaleType="fitXY"
+                                android:src="@mipmap/default_iv"
+                                app:image="@{imageUrl}" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:padding="0dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="16dp"
+                                    android:text="发现异常时间"
+                                    android:textColor="#474455" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="16dp"
+                                    android:text="@{createTime}"
+                                    android:textColor="#9fa0a0"
+                                    tools:text="2018-08-08 12:00" />
+
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@mipmap/set_right_ico" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="24dp"
+                            android:background="#f4f7ff" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp"
+                            android:visibility="@{stepStatus > 0 ? view.VISIBLE : view.GONE}">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/inspection_ldfk_ico_a" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:text="领导反馈"
+                                android:textColor="#844949"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:visibility="@{opinionBean == null ? view.GONE : view.VISIBLE}">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/inspection_text_bg_a"
+                                android:paddingLeft="36dp"
+                                android:paddingRight="36dp"
+                                android:visibility="@{opinionBean.opinionStatus == 1 ? view.VISIBLE : view.GONE}">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:src="@mipmap/inspection_ljcl_ico_a" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="16dp"
+                                    android:text="立即处理"
+                                    android:textColor="#ffffff"
+                                    android:textSize="16sp" />
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/inspection_text_bg_c"
+                                android:paddingLeft="36dp"
+                                android:paddingRight="36dp"
+                                android:visibility="@{opinionBean.opinionStatus == 1 ? view.GONE : view.VISIBLE}">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:src="@mipmap/inspection_jjcl_ico_a" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="16dp"
+                                    android:text="拒绝处理"
+                                    android:textColor="#ffffff"
+                                    android:textSize="16sp" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="@{opinionBean.opinionDescription}"
+                                android:textColor="#474455"
+                                tools:text="文物概况已知晓，请相关单位抓紧处理！" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="@{String.format(`%s   %s`,opinionBean.user.truename,opinionBean.createTime)}"
+                                android:textColor="#9fa0a0"
+                                tools:text="海淀区文化委员会   2018-01-01 12：00" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:background="#dde2e3"
+                            android:visibility="@{stepStatus > 0 ? view.VISIBLE : view.GONE}" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="24dp"
+                            android:background="#f4f7ff"
+                            android:visibility="@{stepStatus > 1 ? view.VISIBLE : view.GONE}" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp"
+                            android:visibility="@{stepStatus > 1 ? view.VISIBLE : view.GONE}">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/inspection_fkcl_ico_a" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:text="反馈处理"
+                                android:textColor="#844949"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:background="#dde2e3"
+                            android:visibility="@{stepStatus > 1 ? view.VISIBLE : view.GONE}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="24dp"
+                            android:layout_marginRight="24dp"
+                            android:layout_marginTop="24dp"
+                            android:background="@drawable/inspection_text_bg_g"
+                            android:gravity="center"
+                            android:padding="16dp"
+                            android:text="历史反馈处理信息"
+                            android:textColor="#474455"
+                            android:textSize="16sp"
+                            android:visibility="@{stepStatus > 1 ? view.VISIBLE : view.GONE}" />
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/handles_recycler_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#ffffff"
+                            android:overScrollMode="never"
+                            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                            tools:itemCount='2'
+                            tools:listitem="@layout/activity_inspection_handles_item" />
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/archives_recycler_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#ffffff"
+                            android:overScrollMode="never"
+                            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                            tools:itemCount='2'
+                            tools:listitem="@layout/activity_inspection_archives_item" />
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+
+                <LinearLayout
+                    android:id="@+id/line_step_next"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="#63a8a9"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:visibility="@{stepFlag == 0 ? view.GONE : view.VISIBLE}">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:gravity="center"
+                        android:src="@mipmap/inspection_tj_ico_a" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="反馈提交"
+                        android:textColor="#ffffff"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

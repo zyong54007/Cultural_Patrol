@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/shouye"
+        android:icon="@drawable/tab_icon_home"
+        android:title="@string/shouye"
+        android:enabled="true"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/daohang"
+        android:icon="@drawable/tab_icon_location"
+        android:title="@string/daohang"
+        android:enabled="true"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:enabled="true"
+        app:showAsAction="ifRoom"
+        android:id="@+id/xunjian"
+        android:icon="@drawable/tab_icon_venue"
+        android:title="@string/xunjian" />
+
+    <item
+        android:enabled="true"
+        app:showAsAction="ifRoom"
+        android:id="@+id/wode"
+        android:icon="@drawable/tab_icon_profile"
+        android:title="@string/wodes" />
+
+
+
+</menu>

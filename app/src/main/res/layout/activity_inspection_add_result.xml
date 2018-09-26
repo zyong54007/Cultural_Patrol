@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="imageUrlPath"
+            type="String" />
+
+        <variable
+            name="treasuresBean"
+            type="com.zhjy.cultural.services.patrol.biz.pojo.response.ext.GetTreasuresInfoResponse" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.zhjy.cultural.services.patrol.ui.inspection.addresult.InspectionAddResultActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#804646"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/view_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="#804646"
+                android:gravity="bottom"
+                android:paddingBottom="16dp"
+                android:paddingTop="16dp">
+
+                <ImageView
+                    android:id="@+id/imge_back"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:onClick="finish"
+                    android:src="@mipmap/back_left_ico" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="文物巡检信息"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fadingEdge="none"
+                    android:fillViewport="true"
+                    android:overScrollMode="never"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#f4f7ff"
+                        android:orientation="vertical"
+                        android:paddingBottom="48dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_180"
+                            android:background="@mipmap/treasures_top_bg_a"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/image"
+                                    imageUrl="@{imageUrlPath}"
+                                    android:layout_width="@dimen/dp_120"
+                                    android:layout_height="@dimen/dp_80"
+                                    android:layout_margin="@dimen/dp_10"
+                                    android:scaleType="fitXY"
+                                    android:src="@mipmap/default_iv" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/text_title"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@{treasuresBean.title}"
+                                        android:textColor="#844949"
+                                        android:textSize="@dimen/size_16"
+                                        tools:text="标题标题标题标题" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="16dp"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="@{String.format(`保护等级:%s`,treasuresBean.wwTypeStr)}"
+                                            android:textColor="#5a5263"
+                                            tools:text="保护等级:国家级" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="@{String.format(`风险类别:%d`,treasuresBean.fxType)}"
+                                            android:textColor="#5a5263"
+                                            tools:text="风险类别:二类" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8dp"
+                                        android:orientation="horizontal">
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:src="@mipmap/ww_address" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="8dp"
+                                            android:text="@{treasuresBean.address}"
+                                            android:textColor="#5a5263"
+                                            tools:text="北京市海淀区" />
+
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@mipmap/xj_xx_num_ico" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="@{String.format(`巡检%d次`,treasuresBean.totalRecord)}"
+                                    android:textColor="#22819f"
+                                    tools:text="巡检10次" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="@{String.format(`异常信息(%d)`,treasuresBean.totalStatus3)}"
+                                    android:textColor="#bf3636"
+                                    tools:text="异常信息(0)" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="@{String.format(`已归档(%d)`,treasuresBean.totalStatus1)}"
+                                    android:textColor="#bf3636"
+                                    tools:text="已归档(5)" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:text="@{String.format(`未归档(%d)`,treasuresBean.totalStatus2)}"
+                                    android:textColor="#bf3636"
+                                    tools:text="未归档(5)" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#ffffff"
+                            android:padding="16dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:background="@mipmap/inspection_img_line_a"
+                                android:gravity="center" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:background="@drawable/inspection_text_bg_r"
+                                android:paddingBottom="5dp"
+                                android:paddingLeft="18dp"
+                                android:paddingRight="18dp"
+                                android:paddingTop="5dp"
+                                android:text="巡检结果"
+                                android:textColor="#ffffff"
+                                android:textSize="16sp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:background="@mipmap/inspection_img_line_b"
+                                android:gravity="center" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#ffffff"
+                            android:orientation="horizontal"
+                            android:padding="16dp">
+
+                            <LinearLayout
+                                android:id="@+id/line_a_one_yes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="16dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/inspection_text_bg_b"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:padding="16dp">
+
+                                <ImageView
+                                    android:id="@+id/img_a_one_yes"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="16dp"
+                                    android:src="@mipmap/inspection_img_y_b" />
+
+                                <TextView
+                                    android:id="@+id/text_a_one_yes"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="文物正常"
+                                    android:textColor="#258784"
+                                    android:textSize="16sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/line_a_one_no"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="16dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/inspection_text_bg_d"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:padding="16dp">
+
+                                <ImageView
+                                    android:id="@+id/img_a_one_no"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="16dp"
+                                    android:src="@mipmap/inspection_img_n_b" />
+
+                                <TextView
+                                    android:id="@+id/text_a_one_no"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="文物异常"
+                                    android:textColor="#844949"
+                                    android:textSize="16sp" />
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#ffffff"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:text="相关描述"
+                                android:textColor="#474455"
+                                android:textSize="16sp" />
+
+                            <EditText
+                                android:id="@+id/edit_content"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/inspection_edittext_bg_a"
+                                android:gravity="top"
+                                android:hint="请输入巡检描述信息！"
+                                android:lineSpacingMultiplier="1.5"
+                                android:minLines="5"
+                                android:padding="8dp"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#474455"
+                                android:textColorHint="#474455"
+                                android:textCursorDrawable="@drawable/edit_cursor_color_gray"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:background="#9fa0a0" />
+
+
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+
+                <LinearLayout
+                    android:id="@+id/line_finish"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="#63a8a9"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:gravity="center"
+                        android:src="@mipmap/inspection_tj_ico_a" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="提 交"
+                        android:textColor="#ffffff"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

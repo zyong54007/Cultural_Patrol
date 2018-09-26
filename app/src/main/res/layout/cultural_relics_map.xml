@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_844949"
+    android:orientation="vertical">
+
+    <com.zhjy.cultural.services.patrol.ui.view.Topbar
+        android:id="@+id/map_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="文物地图" />
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/view_toolbar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="#7b4242"-->
+    <!--android:gravity="center"-->
+    <!--android:orientation="horizontal"-->
+    <!--android:paddingBottom="@dimen/dp_15"-->
+    <!--android:paddingTop="@dimen/dp_30">-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/img_search"-->
+    <!--android:layout_width="@dimen/dp_30"-->
+    <!--android:layout_height="@dimen/dp_30"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_marginLeft="16dp"-->
+    <!--android:src="@mipmap/search_find_ico" />-->
+
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:layout_marginLeft="16dp"-->
+    <!--android:layout_marginRight="16dp"-->
+    <!--android:layout_weight="2"-->
+    <!--android:gravity="center"-->
+    <!--android:padding="8dp"-->
+    <!--android:text="文物地图"-->
+    <!--android:textColor="#ffffff"-->
+    <!--android:textSize="18sp"-->
+    <!--tools:text="文物地图" />-->
+    <!--</LinearLayout>-->
+
+
+    <RadioGroup
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_8">
+
+        <RadioButton
+            android:id="@+id/nav_all"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:background="@drawable/navigation_shape"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="@dimen/dp_8"
+            android:text="全部"
+            android:textColor="@drawable/nav_text_color"
+            android:textSize="@dimen/size_14" />
+
+        <RadioButton
+            android:id="@+id/nav_country"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:background="@drawable/navigation_shape"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="@dimen/dp_8"
+            android:text="国家"
+            android:textColor="@drawable/nav_text_color"
+            android:textSize="@dimen/size_14" />
+
+        <RadioButton
+            android:id="@+id/nav_city"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:background="@drawable/navigation_shape"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="@dimen/dp_8"
+            android:text="市级"
+            android:textColor="@drawable/nav_text_color"
+            android:textSize="@dimen/size_14" />
+
+        <RadioButton
+            android:id="@+id/nav_county"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:background="@drawable/navigation_shape"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="@dimen/dp_8"
+            android:text="区级"
+            android:textColor="@drawable/nav_text_color"
+            android:textSize="@dimen/size_14" />
+
+        <RadioButton
+            android:id="@+id/nav_street"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:background="@drawable/navigation_shape"
+            android:button="@null"
+            android:gravity="center"
+            android:paddingBottom="@dimen/dp_8"
+            android:paddingTop="@dimen/dp_8"
+            android:text="文物普查"
+            android:textColor="@drawable/nav_text_color"
+            android:textSize="@dimen/size_14" />
+
+
+    </RadioGroup>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/nva_map"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:clickable="true" />
+
+        <TextView
+            android:id="@+id/route_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/info"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="@dimen/dp_50"
+            android:layout_marginRight="@dimen/dp_50"
+            android:background="@drawable/shape_info"
+            android:drawableLeft="@mipmap/info_icon"
+            android:drawablePadding="@dimen/dp_15"
+            android:paddingBottom="@dimen/dp_15"
+            android:paddingLeft="@dimen/dp_50"
+            android:paddingRight="@dimen/dp_50"
+            android:paddingTop="@dimen/dp_15"
+            android:text="路线"
+            android:textColor="@color/color_ffffff" />
+
+    </FrameLayout>
+
+
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+    <!--<com.baidu.mapapi.map.MapView-->
+    <!--android:id="@+id/map"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent"-->
+    <!--android:clickable="true" />-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_alignParentTop="true"-->
+    <!--android:layout_alignWithParentIfMissing="false"-->
+    <!--android:layout_marginRight="10dp"-->
+    <!--android:layout_marginTop="10dip"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<Button-->
+    <!--android:id="@+id/customicon"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent"-->
+    <!--android:layout_marginTop="10dip"-->
+    <!--android:layout_weight="1.0"-->
+    <!--android:background="@drawable/btn_guide_route_style"-->
+    <!--android:text="自定义起终点图标"-->
+    <!--android:visibility="gone" />-->
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_alignParentTop="true"-->
+    <!--android:layout_alignWithParentIfMissing="false"-->
+    <!--android:layout_centerHorizontal="false"-->
+    <!--android:layout_centerVertical="false"-->
+    <!--android:layout_marginBottom="12dip"-->
+    <!--android:layout_marginRight="16dp"-->
+    <!--android:layout_marginTop="128dp"-->
+    <!--android:gravity="right"-->
+    <!--android:orientation="horizontal"-->
+    <!--android:visibility="visible">-->
+
+    <!--<Button-->
+    <!--android:id="@+id/pre"-->
+    <!--android:layout_width="36dp"-->
+    <!--android:layout_height="18dp"-->
+    <!--android:layout_marginLeft="2dip"-->
+    <!--android:layout_marginRight="2dip"-->
+    <!--android:layout_weight="1.0"-->
+    <!--android:background="@mipmap/pre_"-->
+    <!--android:visibility="gone" />-->
+
+    <!--<Button-->
+    <!--android:id="@+id/next"-->
+    <!--android:layout_width="36dp"-->
+    <!--android:layout_height="18dp"-->
+    <!--android:layout_marginLeft="2dip"-->
+    <!--android:layout_marginRight="2dip"-->
+    <!--android:layout_weight="1.0"-->
+    <!--android:background="@mipmap/next_"-->
+    <!--android:visibility="gone" />-->
+    <!--</LinearLayout>-->
+    <!--</RelativeLayout>-->
+
+    <!--<FrameLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="top"-->
+    <!--android:background="#7b4242"-->
+    <!--android:gravity="center">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:background="#ffffff"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/view_toolbar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="#7b4242"-->
+    <!--android:gravity="center"-->
+    <!--android:orientation="horizontal"-->
+    <!--android:paddingBottom="16dp"-->
+    <!--android:paddingTop="32dp">-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/img_search"-->
+    <!--android:layout_width="@dimen/dp_30"-->
+    <!--android:layout_height="@dimen/dp_30"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_marginLeft="16dp"-->
+    <!--android:src="@mipmap/search_find_ico" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/text_location"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:layout_marginLeft="16dp"-->
+    <!--android:layout_marginRight="16dp"-->
+    <!--android:layout_weight="2"-->
+    <!--android:gravity="center"-->
+    <!--android:padding="8dp"-->
+    <!--android:text="文物地图"-->
+    <!--android:textColor="#ffffff"-->
+    <!--android:textSize="18sp"-->
+    <!--tools:text="文物地图" />-->
+    <!--</LinearLayout>-->
+
+
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginBottom="@dimen/dp_10">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/textView1"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="@dimen/dp_10"-->
+    <!--android:layout_marginTop="@dimen/dp_12"-->
+    <!--android:gravity="center"-->
+    <!--android:text="起点"-->
+    <!--android:textColor="#959595"-->
+    <!--android:textSize="14sp" />-->
+
+
+    <!--<EditText-->
+    <!--android:id="@+id/start"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_toRightOf="@+id/textView1"-->
+    <!--android:ems="15"-->
+    <!--android:textSize="14sp" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/textView2"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@+id/textView1"-->
+    <!--android:layout_marginLeft="@dimen/dp_10"-->
+    <!--android:layout_marginTop="@dimen/dp_30"-->
+    <!--android:gravity="bottom"-->
+    <!--android:text="终点"-->
+    <!--android:textColor="#959595"-->
+    <!--android:textSize="14sp" />-->
+
+
+    <!--<EditText-->
+    <!--android:id="@+id/end"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@+id/textView1"-->
+    <!--android:layout_marginTop="@dimen/dp_15"-->
+    <!--android:layout_toRightOf="@+id/textView2"-->
+    <!--android:ems="15"-->
+    <!--android:text=""-->
+    <!--android:textSize="14sp" />-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/exchange"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:layout_marginLeft="@dimen/dp_10"-->
+    <!--android:layout_toRightOf="@+id/end"-->
+    <!--android:padding="3dp"-->
+    <!--android:src="@mipmap/exchange" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/text_search"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:layout_toRightOf="@+id/exchange"-->
+    <!--android:background="@drawable/search_map_btn_o"-->
+    <!--android:paddingBottom="8dp"-->
+    <!--android:paddingLeft="@dimen/dp_15"-->
+    <!--android:paddingRight="@dimen/dp_15"-->
+    <!--android:paddingTop="8dp"-->
+    <!--android:text="搜索"-->
+    <!--android:textColor="#754747"-->
+    <!--android:textSize="16sp" />-->
+
+
+    <!--</RelativeLayout>-->
+
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="16dp"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/line_drive"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:gravity="center"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/img_drive"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:src="@mipmap/race" />-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:paddingLeft="8dp"-->
+    <!--android:text="驾车"-->
+    <!--android:textColor="#474455"-->
+    <!--android:textSize="16sp" />-->
+    <!--</LinearLayout>-->
+
+    <!--<View-->
+    <!--android:id="@+id/view_drive"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="2dp"-->
+    <!--android:background="#844949" />-->
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/line_bus"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:gravity="center"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/img_bus"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:src="@mipmap/car" />-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:paddingLeft="8dp"-->
+    <!--android:text="公交"-->
+    <!--android:textColor="#474455"-->
+    <!--android:textSize="16sp" />-->
+    <!--</LinearLayout>-->
+
+    <!--<View-->
+    <!--android:id="@+id/view_bus"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="2dp"-->
+    <!--android:background="#844949"-->
+    <!--android:visibility="invisible" />-->
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/line_walk"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:gravity="center"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/img_walk"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:src="@mipmap/people" />-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:paddingLeft="8dp"-->
+    <!--android:text="步行"-->
+    <!--android:textColor="#474455"-->
+    <!--android:textSize="16sp" />-->
+    <!--</LinearLayout>-->
+
+    <!--<View-->
+    <!--android:id="@+id/view_walk"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="2dp"-->
+    <!--android:background="#844949"-->
+    <!--android:visibility="invisible" />-->
+    <!--</LinearLayout>-->
+
+    <!--<View-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="1dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:visibility="gone" />-->
+
+    <!--<Button-->
+    <!--android:id="@+id/drive"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent"-->
+    <!--android:layout_marginLeft="2dip"-->
+    <!--android:layout_marginRight="2dip"-->
+    <!--android:layout_weight="1.0"-->
+    <!--android:background="@drawable/btn_guide_route_style"-->
+    <!--android:text="驾车"-->
+    <!--android:visibility="gone" />-->
+
+    <!--<Button-->
+    <!--android:id="@+id/transit"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent"-->
+    <!--android:layout_marginLeft="2dip"-->
+    <!--android:layout_marginRight="2dip"-->
+    <!--android:layout_weight="1.0"-->
+    <!--android:background="@drawable/btn_guide_route_style"-->
+    <!--android:text="公交"-->
+    <!--android:visibility="gone" />-->
+
+    <!--<Button-->
+    <!--android:id="@+id/walk"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent"-->
+    <!--android:layout_marginLeft="2dip"-->
+    <!--android:layout_marginRight="2dip"-->
+    <!--android:layout_weight="1.0"-->
+    <!--android:background="@drawable/btn_guide_route_style"-->
+    <!--android:text="步行"-->
+    <!--android:visibility="gone" />-->
+
+    <!--<Button-->
+    <!--android:id="@+id/yuyin"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent"-->
+    <!--android:layout_marginLeft="2dip"-->
+    <!--android:layout_marginRight="2dip"-->
+    <!--android:layout_weight="1.0"-->
+    <!--android:background="@drawable/btn_guide_route_style"-->
+    <!--android:text="语音导航"-->
+    <!--android:visibility="gone" />-->
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/line_list"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_alignWithParentIfMissing="false"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:animateLayoutChanges="true"-->
+    <!--android:background="#f6f6f3"-->
+    <!--android:orientation="vertical"-->
+    <!--android:visibility="gone">-->
+
+    <!--<ListView-->
+    <!--android:id="@+id/listView1"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_marginTop="8dp"-->
+    <!--android:background="#ffffff"-->
+    <!--android:divider="#f6f6f6"-->
+    <!--android:dividerHeight="8dp"-->
+    <!--android:listSelector="@drawable/list_selector"-->
+    <!--android:scrollbars="none" />-->
+    <!--</LinearLayout>-->
+    <!--</LinearLayout>-->
+
+    <!--</FrameLayout>-->
+
+
+    <!--<Button-->
+    <!--android:id="@+id/serch_btn"-->
+    <!--android:layout_width="48dp"-->
+    <!--android:layout_height="48dp"-->
+    <!--android:layout_gravity="right"-->
+    <!--android:layout_marginRight="16dp"-->
+    <!--android:layout_marginTop="256dp"-->
+    <!--android:background="@mipmap/navigation" />-->
+</LinearLayout>

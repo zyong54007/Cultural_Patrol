@@ -1,0 +1,712 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#eaeaea"
+	android:orientation="vertical">
+
+	<FrameLayout
+		android:id="@+id/fram_map"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:visibility="gone"
+		>
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical"
+			android:visibility="visible" >
+			<com.baidu.mapapi.map.MapView
+				android:id="@+id/map"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:clickable="true" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/linepop"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="24dp"
+			android:layout_marginLeft="12dp"
+			android:layout_marginRight="12dp"
+			android:orientation="horizontal"
+			android:background="#fefffc"
+			>
+			<TextView
+				android:id="@+id/title_back"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerHorizontal="true"
+				android:layout_centerVertical="true"
+				android:padding="8dp"
+				android:text="@string/title_back"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:textColor="#656565" />
+			<TextView
+				android:id="@+id/title_name"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerHorizontal="true"
+				android:layout_centerVertical="true"
+				android:layout_weight="1"
+				android:padding="8dp"
+				android:text=""
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:textColor="#656565" />
+			<TextView
+				android:id="@+id/title_finish"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="right"
+				android:gravity="right"
+				android:layout_weight="0"
+				android:padding="8dp"
+				android:text="X"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:textColor="#656565" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/line_list"
+			android:layout_width="match_parent"
+			android:layout_height="192dp"
+			android:layout_alignParentBottom="true"
+			android:layout_alignWithParentIfMissing="false"
+			android:layout_centerHorizontal="true"
+			android:orientation="vertical"
+			android:background="#f6f6f3"
+			android:visibility="gone"
+			android:layout_gravity="bottom">
+			<View
+				android:id="@+id/view_list_pop_top"
+				android:layout_width="36dp"
+				android:layout_height="4dp"
+				android:layout_gravity="center"
+				android:layout_margin="8dp"
+				android:gravity="center"
+				android:background="@drawable/perimeter_list_top_back"
+				/>
+
+			<ListView
+				android:id="@+id/listView1"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:divider="#eaeaea"
+				android:dividerHeight="8dp"
+				android:background="#ffffff"
+				android:listSelector="@drawable/list_selector"
+				android:scrollbars="none">
+			</ListView>
+		</LinearLayout>
+	</FrameLayout>
+
+	<LinearLayout
+		android:id="@+id/line_top"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:paddingLeft="16dp"
+		android:paddingRight="16dp"
+		android:visibility="visible">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical"
+			android:paddingTop="8dp">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:gravity="center"
+				android:orientation="horizontal">
+
+				<ImageView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:src="@mipmap/msl" />
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:text="餐饮"
+					android:textColor="#f46f0e" />
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:paddingLeft="8dp"
+				android:paddingTop="8dp">
+
+				<View
+					android:layout_width="2dp"
+					android:layout_height="match_parent"
+					android:background="#f46f0e" />
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical">
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+
+						<TextView
+							android:id="@+id/meishi"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_weight="1"
+							android:background="#ffffff"
+							android:gravity="center"
+							android:paddingBottom="8dp"
+							android:paddingTop="8dp"
+							android:text="美食" />
+
+						<TextView
+							android:id="@+id/xiaochi"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_marginLeft="0.1dp"
+							android:layout_weight="1"
+							android:background="#ffffff"
+							android:gravity="center"
+							android:paddingBottom="8dp"
+							android:paddingTop="8dp"
+							android:text="小吃快餐" />
+
+						<TextView
+							android:id="@+id/huoguo"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_marginLeft="0.1dp"
+							android:layout_weight="1"
+							android:background="#ffffff"
+							android:gravity="center"
+							android:paddingBottom="8dp"
+							android:paddingTop="8dp"
+							android:text="火锅" />
+					</LinearLayout>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+
+						<TextView
+							android:id="@+id/zhongcai"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_marginTop="0.1dp"
+							android:layout_weight="1"
+							android:background="#ffffff"
+							android:gravity="center"
+							android:paddingBottom="8dp"
+							android:paddingTop="8dp"
+							android:text="中餐" />
+
+						<TextView
+							android:id="@+id/jiuba"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_marginLeft="0.1dp"
+							android:layout_marginTop="0.1dp"
+							android:layout_weight="1"
+							android:background="#ffffff"
+							android:gravity="center"
+							android:paddingBottom="8dp"
+							android:paddingTop="8dp"
+							android:text="酒吧" />
+
+						<TextView
+							android:id="@+id/kafeiting"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_marginLeft="0.1dp"
+							android:layout_marginTop="0.1dp"
+							android:layout_weight="1"
+							android:background="#ffffff"
+							android:gravity="center"
+							android:paddingBottom="8dp"
+							android:paddingTop="8dp"
+							android:text="咖啡厅" />
+					</LinearLayout>
+				</LinearLayout>
+			</LinearLayout>
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical"
+			android:paddingTop="8dp">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:gravity="center"
+				android:orientation="horizontal">
+
+				<ImageView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:src="@mipmap/jdl" />
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:text="酒店"
+					android:textColor="#3f97e1" />
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:paddingLeft="8dp"
+				android:paddingTop="8dp">
+
+				<View
+					android:layout_width="2dp"
+					android:layout_height="match_parent"
+					android:background="#3f97e1" />
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical">
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+
+						<TextView
+							android:id="@+id/jiudian"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_weight="1"
+							android:background="#ffffff"
+							android:gravity="center"
+							android:paddingBottom="8dp"
+							android:paddingTop="8dp"
+							android:text="酒店"
+							/>
+
+						<TextView
+							android:id="@+id/kuaijiejiudian"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_marginLeft="0.1dp"
+							android:layout_weight="1"
+							android:background="#ffffff"
+							android:gravity="center"
+							android:paddingBottom="8dp"
+							android:paddingTop="8dp"
+							android:text="快捷酒店" />
+
+						<TextView
+							android:id="@+id/xingjijiudian"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_marginLeft="0.1dp"
+							android:layout_weight="1"
+							android:background="#ffffff"
+							android:gravity="center"
+							android:paddingBottom="8dp"
+							android:paddingTop="8dp"
+							android:text="星级酒店" />
+					</LinearLayout>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+
+						<TextView
+							android:id="@+id/tejiajiudian"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_marginTop="0.1dp"
+							android:layout_weight="1"
+							android:background="#ffffff"
+							android:gravity="center"
+							android:paddingBottom="8dp"
+							android:paddingTop="8dp"
+							android:text="特价酒店" />
+
+						<TextView
+							android:id="@+id/bingua"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_marginLeft="0.1dp"
+							android:layout_marginTop="0.1dp"
+							android:layout_weight="1"
+							android:background="#ffffff"
+							android:gravity="center"
+							android:paddingBottom="8dp"
+							android:paddingTop="8dp"
+							android:text="宾馆" />
+
+						<TextView
+							android:id="@+id/gongyujiudian"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_marginLeft="0.1dp"
+							android:layout_marginTop="0.1dp"
+							android:layout_weight="1"
+							android:background="#ffffff"
+							android:gravity="center"
+							android:paddingBottom="8dp"
+							android:paddingTop="8dp"
+							android:text="公寓式酒店" />
+					</LinearLayout>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+
+						<TextView
+							android:id="@+id/zhaodaisuo"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_marginTop="0.1dp"
+							android:layout_weight="1"
+							android:background="#ffffff"
+							android:gravity="center"
+							android:paddingBottom="8dp"
+							android:paddingTop="8dp"
+							android:text="招待所" />
+
+						<TextView
+							android:id="@+id/qingnianlvshe"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_marginLeft="0.1dp"
+							android:layout_marginTop="0.1dp"
+							android:layout_weight="1"
+							android:background="#ffffff"
+							android:gravity="center"
+							android:paddingBottom="8dp"
+							android:paddingTop="8dp"
+							android:text="青年旅社" />
+
+						<TextView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_marginLeft="0.1dp"
+							android:layout_marginTop="0.1dp"
+							android:layout_weight="1"
+							android:background="#ffffff"
+							android:gravity="center"
+							android:paddingBottom="8dp"
+							android:paddingTop="8dp"
+							android:text="" />
+					</LinearLayout>
+				</LinearLayout>
+			</LinearLayout>
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical"
+			android:paddingTop="8dp">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:gravity="center"
+				android:orientation="horizontal">
+
+				<ImageView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:src="@mipmap/jdle" />
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:text="景点"
+					android:textColor="#4cb050" />
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:paddingLeft="8dp"
+				android:paddingTop="8dp">
+
+				<View
+					android:layout_width="2dp"
+					android:layout_height="match_parent"
+					android:background="#4cb050" />
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical">
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+
+						<TextView
+							android:id="@+id/jingdian"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_weight="1"
+							android:background="#ffffff"
+							android:gravity="center"
+							android:paddingBottom="8dp"
+							android:paddingTop="8dp"
+							android:text="景点" />
+
+						<TextView
+							android:id="@+id/fengjing"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_marginLeft="0.1dp"
+							android:layout_weight="1"
+							android:background="#ffffff"
+							android:gravity="center"
+							android:paddingBottom="8dp"
+							android:paddingTop="8dp"
+							android:text="风景区" />
+
+						<TextView
+							android:id="@+id/gongyuan"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_marginLeft="0.1dp"
+							android:layout_weight="1"
+							android:background="#ffffff"
+							android:gravity="center"
+							android:paddingBottom="8dp"
+							android:paddingTop="8dp"
+							android:text="公园" />
+					</LinearLayout>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+
+						<TextView
+							android:id="@+id/dongwu"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_marginTop="0.1dp"
+							android:layout_weight="1"
+							android:background="#ffffff"
+							android:gravity="center"
+							android:paddingBottom="8dp"
+							android:paddingTop="8dp"
+							android:text="动物园" />
+
+						<TextView
+							android:id="@+id/zhiwu"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_marginLeft="0.1dp"
+							android:layout_marginTop="0.1dp"
+							android:layout_weight="1"
+							android:background="#ffffff"
+							android:gravity="center"
+							android:paddingBottom="8dp"
+							android:paddingTop="8dp"
+							android:text="植物园" />
+
+						<TextView
+							android:id="@+id/bowu"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_marginLeft="0.1dp"
+							android:layout_marginTop="0.1dp"
+							android:layout_weight="1"
+							android:background="#ffffff"
+							android:gravity="center"
+							android:paddingBottom="8dp"
+							android:paddingTop="8dp"
+							android:text="博物馆" />
+					</LinearLayout>
+				</LinearLayout>
+			</LinearLayout>
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical"
+			android:paddingTop="8dp">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:gravity="center"
+				android:orientation="horizontal">
+
+				<ImageView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:src="@mipmap/yul" />
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:paddingLeft="8dp"
+					android:text="娱乐"
+					android:textColor="#fec100" />
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:paddingLeft="8dp"
+				android:paddingTop="8dp">
+
+				<View
+					android:layout_width="2dp"
+					android:layout_height="match_parent"
+					android:background="#fec100" />
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical">
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+
+						<TextView
+							android:id="@+id/yule"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_weight="1"
+							android:background="#ffffff"
+							android:gravity="center"
+							android:paddingBottom="8dp"
+							android:paddingTop="8dp"
+							android:text="娱乐" />
+
+						<TextView
+							android:id="@+id/ktv"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_marginLeft="0.1dp"
+							android:paddingBottom="8dp"
+							android:paddingTop="8dp"
+							android:gravity="center"
+							android:layout_weight="1"
+							android:text="ktv"
+							android:background="#ffffff" />
+
+						<TextView
+							android:id="@+id/jianshen"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:paddingTop="8dp"
+							android:paddingBottom="8dp"
+							android:layout_gravity="center"
+							android:gravity="center"
+							android:layout_weight="1"
+							android:text="健身"
+							android:background="#ffffff"
+							android:layout_marginLeft="0.1dp" />
+					</LinearLayout>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal">
+
+						<TextView
+							android:id="@+id/xiyu"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:paddingTop="8dp"
+							android:paddingBottom="8dp"
+							android:layout_gravity="center"
+							android:gravity="center"
+							android:layout_weight="1"
+							android:text="洗浴中心"
+							android:background="#ffffff"
+							android:layout_marginTop="0.1dp" />
+
+						<TextView
+							android:id="@+id/tiyu"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:paddingTop="8dp"
+							android:paddingBottom="8dp"
+							android:layout_gravity="center"
+							android:gravity="center"
+							android:layout_weight="1"
+							android:text="体育场馆"
+							android:background="#ffffff"
+							android:layout_marginLeft="0.1dp"
+							android:layout_marginTop="0.1dp" />
+
+						<TextView
+							android:id="@+id/dianying"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:paddingTop="8dp"
+							android:paddingBottom="8dp"
+							android:layout_gravity="center"
+							android:gravity="center"
+							android:layout_weight="1"
+							android:text="网吧"
+							android:background="#ffffff"
+							android:layout_marginLeft="0.1dp"
+							android:layout_marginTop="0.1dp" />
+					</LinearLayout>
+				</LinearLayout>
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>
